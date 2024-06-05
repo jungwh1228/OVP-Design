@@ -1,0 +1,44 @@
+@mixin button {
+  @include flex;
+  @include animation-default;
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: $border-radius-default;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+  }
+}
+
+@mixin button-size($height: 32px, $gap: null, $padding: 12px, $font-size: 14, $icon-sm: false) {
+  height: $height;
+  gap: $gap;
+  padding: 0 $padding;
+  @include font-size($font-size);
+}
+
+
+// -------------------------
+// classes
+// -------------------------
+.button {
+  @include button;
+  @include button-size($gap: 4px);
+
+
+// size
+  &-lg {
+    @include button-size($height: 40px, $gap: 5px, $font-size: '15', $padding: $spacing-16);
+  }
+
+  &-sm {
+    @include button-size($height: 24px, $gap: 2px, $font-size: '12', $padding: $spacing-8);
+  }
+}
