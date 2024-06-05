@@ -76,6 +76,10 @@ table {
   border-spacing: 0;
 }
 
+.wrap {
+  padding: 32px;
+}
+
 .svg-icon {
   width: 20px;
   height: 20px;
@@ -100,6 +104,8 @@ table {
   height: 32px;
   gap: 4px;
   padding: 0 12px;
+  font-size: 14px;
+  line-height: 20px;
 }
 .button:focus {
   outline: none;

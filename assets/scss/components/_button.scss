@@ -17,7 +17,7 @@
   }
 }
 
-@mixin button-size($height: 32px, $gap: null, $padding: 12px, $font-size: 14, $icon-sm: false) {
+@mixin button-size($height: 32px, $gap: null, $padding: 12px, $font-size: '14', $icon-sm: false) {
   height: $height;
   gap: $gap;
   padding: 0 $padding;
