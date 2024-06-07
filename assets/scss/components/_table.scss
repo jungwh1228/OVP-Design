@@ -38,8 +38,8 @@
     background-color: $hover-row;
   }
 
-  .tr-selected td,
-  .tr-selected:hover td {
+  .tr.is-selected td,
+  .tr.is-selected:hover td {
     background-color: $ui-01 !important;
     color: $active-primary !important;
   }
