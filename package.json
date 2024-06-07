@@ -5,10 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass --watch assets/scss:assets/css",
-    "build:base": "tailwindcss build assets/scss/tailwind/_tailwind-base.scss -o assets/css/tailwind-base.css",
-    "build:utilities": "tailwindcss build assets/scss/tailwind/_tailwind-utilities.scss -o assets/css/tailwind-utilities.css",
-    "start": "npm run sass"
+    "sass": "sass --watch assets/scss:assets/css"
   },
   "keywords": [],
   "author": "",

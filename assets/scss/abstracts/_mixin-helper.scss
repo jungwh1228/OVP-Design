@@ -18,7 +18,7 @@
 //-------------------------------------------
 @mixin ellipsis($width: null) {
   display: block;
-  // @apply truncate;
+  @apply truncate;
 
   @if ($width) {
     width: $width;

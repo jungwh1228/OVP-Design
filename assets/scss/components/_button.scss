@@ -11,17 +11,53 @@
     outline: none;
   }
 
-  &:disabled {
-    opacity: .5;
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:focus {
+    opacity: .25;
     cursor: not-allowed;
   }
 }
 
-@mixin button-size($height: 32px, $gap: null, $padding: 12px, $font-size: '14', $icon-sm: false) {
+@mixin button-size($height: 32px, $gap: 4px, $padding: 12px, $font-size: '14', $icon-size: 'sm') {
   height: $height;
   gap: $gap;
   padding: 0 $padding;
   @include font-size($font-size);
+
+  .svg-icon {
+    @include icon-size($icon-size);
+  }
+}
+
+// button-theme
+@mixin button-theme($bg-color: null, $font-color: null, $hover-bg-color: null, $active-bg-color: null,$border-color: false) {
+  background-color: $bg-color;
+  color: $font-color;
+
+  &:hover:not(:disabled) {
+    background-color: $hover-bg-color;
+  }
+
+  &:active:not(:disabled) {
+    background-color: $active-bg-color;
+  }
+
+  .svg-icon {
+    fill: $font-color;
+  }
+
+  @if ($border-color) {
+    border-color: $border-color;
+  }
+}
+
+@mixin icon-button-size($icon-button-width: 32px,$icon-size: null) {
+  width: $icon-button-width;
+
+  .button-icon {
+    @include icon-size($icon-size);
+  }
 }
 
 
@@ -32,13 +68,164 @@
   @include button;
   @include button-size($gap: 4px);
 
+  &-text {
+    text-transform: capitalize;
+  }
 
-// size
+  //icon button
+  &:has(.hidden-text) {
+    @include icon-button-size($icon-size: 20px);
+    padding: 0;
+
+    &.button {
+      &-lg {
+        @include icon-button-size($icon-button-width: 40px, $icon-size: 'md');
+      }
+
+      &-sm {
+        @include icon-button-size($icon-button-width: 24px, $icon-size: 'xs');
+      }
+    }
+
+    &.button.button-link {
+      @include icon-button-size($icon-size: 24px);
+
+      &.button-lg {
+        @include icon-button-size($icon-button-width: 40px, $icon-size: 28px);
+      }
+
+      &.button-sm {
+        @include icon-button-size($icon-button-width: 24px, $icon-size: 20px);
+      }
+    }
+  }
+
+  // size
   &-lg {
-    @include button-size($height: 40px, $gap: 5px, $font-size: '15', $padding: $spacing-16);
+    @include button-size($height: 40px, $gap: 5px, $font-size: '15', $padding: $spacing-16, $icon-size: 'md');
   }
 
   &-sm {
-    @include button-size($height: 24px, $gap: 2px, $font-size: '12', $padding: $spacing-8);
+    @include button-size($height: 24px, $gap: 2px, $font-size: '12', $padding: $spacing-8, $icon-size: 'xs');
   }
+
+  // color
+  &-primary {
+    @include button-theme($primary, $text-04, $hover-primary, $active-primary);
+  }
+
+  &-secondary {
+    @include button-theme($secondary,$text-04,$hover-secondary,$active-secondary);
+  }
+
+  &-tertiary {
+    @include button-theme($ui-02, $text-02, $ui-01, $ui-03, $ui-04);
+
+    &:active {
+      border-color: transparent;
+      color: $text-04;
+
+      .svg-icon {
+        fill: $ui-02;
+      }
+    }
+  }
+
+  &-support {
+    @include button-theme($ui-02, $primary, rgba($primary, 0.07), rgba($primary, 0.15), $ui-04);
+    &:hover:not(:disabled) {
+      border-color: $primary;
+    }
+  }
+
+  &-danger {
+    @include button-theme($ui-02, $negative, rgba($negative, 0.07), rgba($negative, 0.15), $ui-04);
+    &:hover:not(:disabled) {
+      border-color: $negative;
+    }
+  }
+
+  &-link {
+    @include button-theme(transparent, $text-02, $ui-01, rgba($secondary, 0.17), transparent);
+
+    &:active {
+      color: $primary;
+
+      .svg-icon {
+        fill: $primary;
+      }
+    }
+  }
+
+  &-underline {
+    @include button-theme(transparent, $text-02, transparent, transparent);
+    text-decoration: underline;
+    padding: 0;
+
+    &:hover:not(:disabled) {
+      color: $text-03;
+
+      .svg-icon {
+        fill: $text-03;
+      }
+    }
+
+    &:active:not(:disabled) {
+      color: $text-01;
+
+      .svg-icon {
+        fill: $text-01;
+      }
+    }
+  }
+
+  &-underline-support {
+    @include button-theme(transparent, $primary, transparent, transparent);
+    text-decoration: underline;
+    padding: 0;
+
+    &:hover:not(:disabled) {
+      color: $hover-primary;
+
+      .svg-icon {
+        fill: $hover-primary;
+      }
+    }
+
+    &:active {
+      color: darken($primary, 0.25);
+
+      .svg-icon {
+        fill: darken($primary, 0.25);
+      }
+    }
+  }
+
+  &-underline-negative {
+    @include button-theme(transparent, $negative, transparent, transparent);
+    padding: 0;
+    text-decoration: underline;
+
+    &:hover:not(:disabled),
+    &:focus-visible:not(:disabled) {
+      color: $hover-negative;
+
+      .svg-icon {
+        fill: $hover-negative;
+      }
+    }
+
+    &:active {
+      color: darken($negative, 0.25);
+
+      .svg-icon {
+        fill: darken($negative, 0.25);
+      }
+    }
+  }
+
+  &-negative {
+    @include button-theme($negative, $text-04, $hover-negative, $active-negative);
+  }
+
 }

@@ -1,0 +1,167 @@
+.modal {
+  @include box-shadow('xl');
+  @include z-index('modal');
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  min-height: 320px;
+  border-radius: $border-radius-default;
+  background-color: $ui-02;
+
+  &-head {
+    padding: $spacing-4 $spacing-12;
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    border-bottom: 1px solid $ui-04;
+
+    .tooltip {
+      margin-left: $spacing-4;
+      margin-bottom: $spacing-2;
+    }
+
+    &-button {
+      margin-left: auto;
+    }
+
+    &-title {
+      @include ellipsis;
+      display: flex;
+      flex: 1 0 auto;
+      align-items: center;
+      width: calc(100% - 140px);
+    }
+
+    &-title-text {
+      @include ellipsis;
+      @include font-size('15');
+      color: $text-02;
+    }
+
+    &-subtitle {
+      @include ellipsis;
+      margin-left: $spacing-4;
+      color: $text-02;
+    }
+  }
+
+  //   modal body padding
+  &-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &-sm {
+      padding: $spacing-16;
+    }
+
+    &-md {
+      padding: $spacing-32;
+    }
+
+    &-lg {
+      padding: $spacing-32 $spacing-48;
+    }
+  }
+
+  &-foot {
+    display: flex;
+    padding: $spacing-12;
+    background-color: $ui-01;
+
+    .button + .button,
+    div + div,
+    .modal-foot-buttons div + div {
+      margin-left: $spacing-8;
+    }
+
+    .modal-foot-buttons {
+      display: flex;
+      margin-left: auto;
+    }
+  }
+
+  // modal 하위에 있는 form, tab overwrite
+  .form-item {
+    padding: $spacing-12 * 0.5 0;
+  }
+
+  .form-lg .form-item {
+    padding: $spacing-12 0;
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  .form-vertical {
+    .form-label {
+      width: 100%;
+    }
+
+    .form-detail {
+      margin-top: $spacing-8;
+    }
+
+    .form-item {
+      padding: $spacing-12 0;
+
+      &:first-child {
+        padding-top: 0;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  .form-complex {
+    .text-input {
+      width: auto;
+    }
+  }
+
+  .tab-contents {
+    flex: 1 0 auto;
+    padding: 0 $spacing-16;
+  }
+
+  //modal에서 탭이 포함될때 ul에 아래 기본선 추가
+  .tab-horizontal .tab-bar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: $ui-04;
+}
+
+  // TODO: [퍼블리싱] 추후 적용할지 검토 예정
+
+  // &-xs {
+  //   width: 350px;
+  //   min-height: 220px;
+  // }
+
+  // &-sm {
+  //   width: 480px;
+  //   min-height:240px;
+  // }
+
+  // &-md {
+  //   width: 620px;
+  // }
+
+  // &-lg {
+  //   width: 720px;
+  // }
+
+  // &-xl {
+  //   width: 900px;
+  // }
+}

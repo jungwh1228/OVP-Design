@@ -1,1 +1,23 @@
 @tailwind utilities;
+
+@layer utilities {
+  .gap-2 {
+    gap: $spacing-2;
+  }
+
+  .gap-8 {
+    gap: $spacing-8;
+  }
+
+  .gap-12 {
+    gap: $spacing-12;
+  }
+
+  .gap-16 {
+    gap: $spacing-16;
+  }
+
+  .gap-20 {
+    gap: $spacing-20;
+  }
+}

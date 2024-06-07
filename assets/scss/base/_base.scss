@@ -1,4 +1,8 @@
 // TODO: [퍼블리싱] 클래스 재정의 및 리팩토링
 .wrap {
   padding: 32px;
+
+  .v-group + .v-group {
+    margin-top: $spacing-48;
+  }
 }

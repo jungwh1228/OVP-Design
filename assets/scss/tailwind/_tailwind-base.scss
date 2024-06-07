@@ -3,6 +3,10 @@
 /* reset */
 @layer base {
   * {
+    @include font-family(pretandard);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
     margin: 0;
     padding: 0;
     border: none;
@@ -11,11 +15,8 @@
   }
 
   html {
-    @include font-family(pretandard);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-weight: 400;
-    letter-spacing: 0;
   }
 
   article,
