@@ -83,3 +83,131 @@
     @content;
   }
 }
+
+// -------------------------
+// list
+// -------------------------
+@mixin list {
+  &__list + &__list::before {
+    content: "";
+    display: block;
+    border-top: 1px solid $ui-04;
+    margin: $spacing-4 0;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &:hover {
+      background-color: $ui-01;
+    }
+  }
+
+  &__button {
+    @include ellipsis;
+    @include button;
+    flex: 1;
+    height: 32px;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: $spacing-4 $spacing-8;
+    cursor: pointer;
+    font-weight: 400;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    text-align: left;
+    // &:hover:not(:disabled) {
+    //   background-color: $ui-01;
+    // }
+
+    &:active {
+      background-color: $ui-01;
+    }
+
+    &:focus-visible:not(:disabled) {
+      border: 2px solid $default-focus;
+    }
+  }
+
+  &__notification {
+    display: flex;
+    flex: 1;
+    height: 32px;
+    padding: $spacing-4 $spacing-8;
+    cursor: default;
+  }
+
+  &__icon,
+  &__subicon {
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+
+  &__icon + &__text,
+  &__subicon + &__text {
+    margin-left: $spacing-4;
+  }
+
+  &__button:active &__text {
+    color: $primary;
+  }
+
+  &__button:active &__icon,
+  &__button:active &__subicon {
+    fill: $primary;
+  }
+
+  &__text {
+    @include text-overflow;
+    @include font-size("13");
+    @include line-height("heading");
+    vertical-align: middle;
+    color: $text-01;
+  }
+
+  &__action-buttons {
+    display: flex;
+    margin-right: $spacing-8;
+    z-index: 1;
+  }
+
+  &__action-button {
+    @include button;
+    padding: 0;
+    border-radius: $border-radius-default;
+    background-color: transparent;
+
+    .button__text {
+      @include font-size("13");
+      margin-left: $spacing-8;
+      color: $text-03;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: $hover-row;
+    }
+
+    &:active:not(:disabled) {
+      background-color: $hover-row;
+
+      .svg-icon {
+        fill: $primary;
+      }
+
+      .button__text {
+        color: $primary;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: $spacing-2;
+    }
+
+    &:focus-visible:not(:disabled) {
+      border: 2px solid $default-focus;
+    }
+  }
+}

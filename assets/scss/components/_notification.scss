@@ -1,0 +1,222 @@
+// ---------------------
+//  TODO: [퍼블리싱] 클래스 재정의 및 리팩토링
+//- icon은 notification-으로 통일
+// ---------------------
+
+@mixin notification-status($text-color, $status-color) {
+  color: $text-color;
+
+  .notification-icon {
+    fill: $status-color;
+  }
+}
+
+@mixin notification-message {
+  display: flex;
+  align-items: center;
+
+  .notification-icon {
+    @include icon-size('xs');
+    margin: 0 $spacing-4 0 0;
+  }
+
+  &-text {
+    @include font-size('12');
+  }
+
+  &-inline {
+    display: inline-flex;
+  }
+
+  &-info {
+    @include notification-status($support-01, $support-01,);
+  }
+
+  &-success {
+    @include notification-status($support-02, $support-02);
+  }
+
+  &-warning {
+    @include notification-status($support-03, $support-03);
+  }
+
+  &-error {
+    @include notification-status($support-04, $support-04);
+  }
+
+  &-loading {
+    @include notification-status($text-03, null);
+  }
+
+  .loader + &-text {
+    margin-left: $spacing-4;
+  }
+}
+
+@mixin notification-full {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .notification-icon {
+    @include icon-size(50px);
+    margin-bottom: $spacing-24;
+  }
+
+  .notification-full-text {
+    @include font-size('24');
+    text-align: center;
+  }
+
+  &-detail {
+    @include flex($direction: column);
+    text-align: center;
+
+    .notification {
+      justify-content: center;
+      margin-top: $spacing-32;
+    }
+
+    .button {
+      margin-top: $spacing-32;
+    }
+  }
+
+  &-subtext {
+    @include font-size("18");
+    font-weight: 400;
+    margin-top: $spacing-12;
+    color: $text-03;
+    text-align: center;
+
+    + .button {
+      margin-top: $spacing-16;
+    }
+  }
+
+  &-info {
+    @include notification-status($text-02, $support-01);
+  }
+
+  &-success {
+    @include notification-status($text-02, $support-02);
+  }
+
+  &-warning {
+    @include notification-status($text-02, $support-03);
+  }
+
+  &-error {
+    @include notification-status($text-02, $support-04);
+  }
+
+  &-loading {
+    @include notification-status($text-02, $text-03);
+  }
+
+  .loader {
+    margin-bottom: $spacing-24;
+  }
+}
+
+.notification {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  &-icon {
+    @include icon-size(22px);
+    flex-shrink: 0;
+    margin: $spacing-16 $spacing-12 0 $spacing-16;
+  }
+
+  &-close-button {
+    @include button;
+    @extend .button-link;
+    padding: 0;
+    width: 48px;
+    height: 53px;
+    margin-left: auto;
+
+    .svg-icon {
+      @include icon-size('xs');
+    }
+  }
+
+  &-contents {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: $spacing-16 $spacing-24 $spacing-16 0;
+    color: $text-02;
+  }
+
+  &-title {
+    @include font-size('14');
+    font-weight: 500;
+    margin-right: $spacing-8;
+    color: $text-01;
+  }
+
+  &-text {
+    @include font-size('14');
+  }
+
+  &-info {
+    @include notification-status($text-01, $support-01);
+    background-color: #deebff;
+  }
+
+  &-success {
+    @include notification-status($text-01, $support-02);
+    background-color: #e3fcef;
+  }
+
+  &-warning {
+    @include notification-status($text-01, $support-03);
+    background-color: #fff5ea;
+  }
+
+  &-error {
+    @include notification-status($text-01, $support-04);
+    background-color: #ffebe6;
+  }
+
+  &-normal {
+    @include notification-status($text-01, $icon-01);
+    background-color: $ui-01;
+  }
+
+
+  &-wrap {
+    width: calc(100% - 1rem);
+    margin: $spacing-8;
+  }
+
+  &-message {
+    @include notification-message;
+  }
+
+  &-full {
+    @include notification-full;
+
+    &-sm {
+      .notification-icon {
+        width: 36px;
+        height: 36px;
+        margin-bottom: $spacing-12;
+      }
+
+      .notification-full-text {
+        @include font-size('18');
+      }
+
+      .notification-full-subtext {
+        @include font-size('12');
+        margin-top: $spacing-8;
+      }
+    }
+  }
+
+}

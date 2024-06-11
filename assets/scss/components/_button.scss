@@ -147,7 +147,6 @@
 
   &-link {
     @include button-theme(transparent, $text-02, $ui-01, rgba($secondary, 0.17), transparent);
-
     &:active {
       color: $primary;
 
@@ -206,8 +205,7 @@
     padding: 0;
     text-decoration: underline;
 
-    &:hover:not(:disabled),
-    &:focus-visible:not(:disabled) {
+    &:hover:not(:disabled) {
       color: $hover-negative;
 
       .svg-icon {

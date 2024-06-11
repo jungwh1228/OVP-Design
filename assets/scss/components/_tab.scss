@@ -1,0 +1,249 @@
+// ---------------------
+//  TODO: [퍼블리싱] 클래스 재정의 및 리팩토링
+// - tab anchor 기능 모디파이어 필요
+// ---------------------
+
+.tab {
+  display: flex;
+  position: relative;
+
+  &-bar {
+    position: relative;
+    display: flex;
+    border-right: 0;
+  }
+
+  &-item {
+    @include animation-default;
+    @include flex($horizontal: flex-start);
+    padding: 0 $spacing-12;
+    position: relative;
+    height: 40px;
+    background-color: $ui-02;
+
+    &:hover .tab-button-text {
+      color: $text-01;
+    }
+
+    &.is-tab-item-selected {
+      .tab-button-text {
+        color: $primary;
+      }
+
+      &:hover .tab-button-text {
+        color: $primary;
+      }
+
+      .tab-button:focus:not(:disabled) {
+        .tab-button-text {
+          color: $primary;
+        }
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        background-color: $primary;
+      }
+    }
+
+    &.is-tab-item-disabled {
+      .tab-button {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      &:hover {
+        .tab-button-text {
+          color: $text-02;
+        }
+      }
+    }
+  }
+  &-button {
+    @include button;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    padding: 0;
+
+    &:focus:not(:disabled) {
+      .tab-button-text {
+        color: $text-01;
+      }
+    }
+  }
+
+
+  &-button-text {
+    @include ellipsis;
+    color: $text-02;
+  }
+
+  &-contents {
+    display: none;
+    padding: $spacing-12;
+
+    &.is-tab-contents-show {
+      display: block;
+    }
+  }
+
+
+  &-panel {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+
+    &.is-tab-panel-hide {
+      display: none !important;
+    }
+  }
+
+  // modifier: horizontal
+  &-horizontal {
+    flex-grow: 1;
+    flex-direction: column;
+
+    .tab-bar:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: $ui-04;
+    }
+
+    .tab-item {
+      padding-bottom: $spacing-2;
+
+      &.is-tab-item-selected::after {
+        @include z-index('float');
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+      }
+    }
+
+    &.is-tab-item-selected,
+    & .is-tab-item-selected + .tab-item {
+      border-left-color: transparent;
+    }
+
+    .tab-button {
+      justify-content: center;
+    }
+  }
+  // modifier: vertical
+  &-vertical {
+    .tab-bar {
+      flex-direction: column;
+      border-right: 2px solid $ui-04;
+    }
+
+    .tab-item.is-tab-item-selected::after {
+      top: 0;
+      right: -2px;
+      width: 2px;
+      height: 100%;
+    }
+
+    .tab-button {
+      justify-content: flex-start;
+    }
+  }
+
+// modifier: container theme
+  &-container {
+    .tab-bar::after {
+      content: none;
+    }
+
+    .tab-item {
+      background-color: $hover-field-border;
+      border-bottom: 1px solid $ui-04;
+
+      &:hover {
+        background-color: darken($hover-field-border, 6%);
+      }
+
+      &:hover .tab-button-text {
+        color: rgba($text-04, 0.85);
+      }
+
+      .tab-button {
+        justify-content: center;
+
+        &:focus:not(:disabled) {
+          .tab-button-text {
+            color: $text-02;
+          }
+        }
+      }
+    }
+
+    .is-tab-item-selected {
+      background-color: $ui-01;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+
+      &:hover {
+        background-color: $ui-01;
+
+        .tab-button-text {
+          color: $text-03;
+        }
+      }
+
+      &::after {
+        display: none;
+      }
+
+      .tab-button:focus:not(:disabled) {
+        .tab-button-text {
+          color: $text-02;
+        }
+      }
+    }
+
+    .is-tab-item-disabled {
+      &:hover {
+        background-color: $hover-field-border;
+      }
+      .tab-button:focus:not(:disabled) {
+        .tab-button-text {
+          color: rgba($text-04, 0.85);
+        }
+      }
+    }
+
+    &.tab-vertical .tab-item.tab-item-selected {
+      border-color: $field-border;
+    }
+
+    .is-tab-item-selected .tab-button-text {
+      color: $text-03;
+    }
+
+    .tab-button-text {
+      margin-top: $spacing-2;
+      color: rgba($text-04, 0.85);
+    }
+
+    &.tab-horizontal .tab-item {
+      justify-content: center;
+      border-left: 1px solid $ui-04;
+
+      &:first-child {
+        border-left-color: transparent;
+      }
+    }
+
+    &.tab-vertical .tab-bar {
+      border-right: 0;
+    }
+  }
+}

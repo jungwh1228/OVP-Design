@@ -92,7 +92,7 @@
   }
 
   // disabled 상태
-&-disabled &-label,
+&.is-checkbox-disabled &-label,
 &-input:disabled + &-label {
   opacity: 0.4;
   cursor: not-allowed;
@@ -106,7 +106,7 @@
     }
   }
 
-  &-disabled &-input:checked + &-labell,
+  &.is-checkbox-disabled &-input:checked + &-label,
   &-input:disabled:checked + &-label {
     &:hover {
       &::before {
@@ -213,12 +213,6 @@
     &:after,
     &:before {
       content: none;
-    }
-  }
-
-  .checkbox-input:focus-visible:not(:disabled) {
-    + .checkbox-label {
-      border-color: $primary;
     }
   }
 

@@ -1,0 +1,54 @@
+.alert {
+  @include box-shadow('xl');
+  @include z-index('alert');
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  min-width: 280px;
+  max-width: 520px;
+  border-radius: $border-radius-default;
+
+  &-body {
+    display: flex;
+    padding: $spacing-32 $spacing-48;
+    background-color: $ui-02;
+
+    .notification {
+      background: transparent;
+
+      &-icon {
+        margin: 0 $spacing-12 0 0;
+      }
+
+      &-contents {
+        flex: 1;
+        padding: 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+
+  &-contents {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &-foot {
+    display: flex;
+    padding: $spacing-12;
+    background-color: $ui-01;
+
+    &-buttons {
+      display: flex;
+      margin-left: auto;
+    }
+
+    .button + .button,
+    div + div,
+    &-buttons div + div {
+      margin-left: $spacing-8;
+    }
+  }
+}

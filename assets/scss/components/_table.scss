@@ -10,6 +10,10 @@
     text-align: left;
   }
 
+  tr:nth-child(2n + 1) td {
+    background-color: $odd-row;
+  }
+
   th, td {
     position: relative;
     height: 40px;
@@ -21,7 +25,8 @@
   }
 
   th {
-    position: relative;
+    background-color: $ui-02;
+    border-bottom: 1px solid $ui-04;
 
     .button {
       display: inline-block;
@@ -29,12 +34,13 @@
       margin-top: -$spacing-4;
     }
   }
+
   td {
     background-color: $ui-02;
   }
 
   // Status
-  tr:hover > td {
+  tr:hover td {
     background-color: $hover-row;
   }
 
@@ -49,5 +55,16 @@
   &.table-sm td {
     @include font-size("13");
     height: 32px;
+  }
+
+ // table ellipsis
+&-ellipsis {
+  table-layout: fixed;
+
+    td {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
   }
 }
