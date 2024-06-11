@@ -88,14 +88,14 @@
 // list
 // -------------------------
 @mixin list {
-  &__list + &__list::before {
+  &-list + &-list::before {
     content: "";
     display: block;
     border-top: 1px solid $ui-04;
     margin: $spacing-4 0;
   }
 
-  &__item {
+  &-item {
     display: flex;
     align-items: center;
     position: relative;
@@ -105,7 +105,7 @@
     }
   }
 
-  &__button {
+  &-button {
     @include ellipsis;
     @include button;
     flex: 1;
@@ -126,13 +126,9 @@
     &:active {
       background-color: $ui-01;
     }
-
-    &:focus-visible:not(:disabled) {
-      border: 2px solid $default-focus;
-    }
   }
 
-  &__notification {
+  &-notification {
     display: flex;
     flex: 1;
     height: 32px;
@@ -140,48 +136,47 @@
     cursor: default;
   }
 
-  &__icon,
-  &__subicon {
+  &-icon,
+  &-subicon {
     vertical-align: middle;
     flex-shrink: 0;
   }
 
-  &__icon + &__text,
-  &__subicon + &__text {
+  &-icon + &-text,
+  &-subicon + &-text {
     margin-left: $spacing-4;
   }
 
-  &__button:active &__text {
+  &-button:active &-text {
     color: $primary;
   }
 
-  &__button:active &__icon,
-  &__button:active &__subicon {
+  &-button:active &-icon,
+  &-button:active &-subicon {
     fill: $primary;
   }
 
-  &__text {
-    @include text-overflow;
-    @include font-size("13");
-    @include line-height("heading");
+  &-text {
+    @include ellipsis;
+    @include font-size('13');
     vertical-align: middle;
     color: $text-01;
   }
 
-  &__action-buttons {
+  &-action-buttons {
     display: flex;
     margin-right: $spacing-8;
     z-index: 1;
   }
 
-  &__action-button {
+  &-action-button {
     @include button;
     padding: 0;
     border-radius: $border-radius-default;
     background-color: transparent;
 
-    .button__text {
-      @include font-size("13");
+    .button-text {
+      @include font-size('13');
       margin-left: $spacing-8;
       color: $text-03;
     }
@@ -204,10 +199,6 @@
 
     &:not(:last-child) {
       margin-right: $spacing-2;
-    }
-
-    &:focus-visible:not(:disabled) {
-      border: 2px solid $default-focus;
     }
   }
 }

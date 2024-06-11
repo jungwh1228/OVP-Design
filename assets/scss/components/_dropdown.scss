@@ -1,0 +1,126 @@
+.dropdown {
+    @include list;
+    @include z-index('dropdown');
+    @include box-shadow('md');
+    // display: none;
+    position: absolute;
+    padding: $spacing-4 0;
+    background-color: $ui-02;
+    border-radius: $border-radius-default;
+
+    &-subtext {
+    @include font-size('12');
+    color: $text-03;
+    margin-left: $spacing-16;
+    }
+
+    &-list {
+        min-width: 110px;
+        padding: $spacing-4 0;
+        background-color: $ui-02;
+    }
+
+    &-item {
+        &:hover {
+            .dropdown-submenu {
+                display: block;
+            }
+
+            &.is-dropdown-item-disabled {
+                background-color: $ui-02;
+            }
+        }
+
+        &.is-dropdown-item-disabled {
+            opacity: 0.4;
+
+            .dropdown-button {
+                cursor: not-allowed;
+            }
+
+            .dropdown-text {
+                color: $text-05;
+            }
+
+            .dropdown-icon {
+                fill: $text-03;
+            }
+        }
+    }
+
+    &-icon {
+        fill: $text-02;
+    }
+    
+    &-text {
+        flex-grow: 1;
+        color: $text-02;
+    }
+
+    &-submenu {
+        @include list;
+        @include box-shadow('md');
+        @include z-index('dropdown');
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        border-radius: $border-radius-default;
+
+        &-list {
+            min-width: 100px;
+            padding: $spacing-4 0;
+            background-color: $ui-02;
+        }
+        
+        &-icon {
+            display: none;
+            margin-right: $spacing-2;
+        }
+    }
+
+    &-lg {
+        .dropdown-list {
+            min-width: 140px;
+        }
+    
+        .dropdown-button {
+            padding: $spacing-4, $spacing-12;
+        }
+    
+        .dropdown-button {
+            padding: $spacing-4, $spacing-12;
+        }
+    }
+    
+    &-sm {
+        .dropdown-list {
+            min-width: 110px;
+        }
+    
+        .dropdown-button {
+            padding: $spacing-2 $spacing-8;
+            height: 24px;
+        }
+    
+        .dropdown-icon,
+        .dropdown-action-button .svg-icon {
+            @include icon-size('xs');
+        }
+    
+        .dropdown-text {
+            @include font-size('12');
+        }
+    
+        .dropdown-button {
+            padding: $spacing-2 $spacing-8;
+            height: 24px;
+            line-height: 9px;
+        }
+    
+        .context-submenu__text {
+            @include font-size("12");
+        }
+    }
+    
+  }

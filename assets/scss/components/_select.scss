@@ -4,22 +4,24 @@
   min-width: 64px;
 
   .dropdown {
-    @include list;
-    @include layer("overlay");
-    display: none;
-    z-index: z("dropdown");
-    position: absolute;
     top: calc(100% + 2px);
-    // left: 0;
     width: 100%;
     max-height: 320px;
-    padding: $spacing-4 0;
-    background-color: $ui-02;
-    border-radius: $border-radius-default;
-    border: 1px solid $ui-04;
     overflow: auto;
-  }
+    border: 1px solid $ui-04;
 
+    &-subtext {
+      margin-left: auto;
+    }
+
+    &-notification > .notification-message{
+      width: 100%;
+    
+      .notification-message-text{
+        @include ellipsis;
+      }
+    }
+  }
 
   &-button {
     @include button;
@@ -42,7 +44,7 @@
 
     &:focus {
       border-color: $secondary;
-      box-shadow: 0 0 rem(4px) rgba(77, 174, 255, 0.4);
+      box-shadow: 0 0 4px rgba(77, 174, 255, 0.4);
     }
 
   }
@@ -276,37 +278,7 @@
 
 
 .svg-icon + .select-selector__title {
-  margin-left: $spacing-2xs;
-}
-
-
-
-.select-container__list {
-  background-color: $ui-02;
-}
-
-.select-container__button {
-  &:focus-visible:not(:disabled) {
-    background-color: $ui-01;
-  }
-}
-
-.select-container__subtext {
-  @include font-size("12");
-  color: $text-03;
-  margin-left: auto;
-}
-
-.select-container--up {
-  box-shadow: 0 0 rem(8px) 0 $box-shadow;
-}
-
-.select-container__notification > .notification-message{
-  width: 100%;
-
-  .notification-message__text{
-    @include text-overflow();
-  }
+  margin-left: $spacing-4;
 }
 
 
@@ -317,13 +289,13 @@
 // lg
 .select--lg {
   .select-selector {
-    height: $button-height-lg;
+    height: 40px;
   }
 
   .select-container {
     .select-container__button {
-      @include stable-padding($spacing-2xs, $spacing-sm);
-      height: $button-height-lg;
+      padding:$spacing-4 $spacing-12;
+      height: 40px;
     }
 
     .select-container__text {
@@ -331,19 +303,19 @@
     }
 
     .select-container__icon {
-      @include svg-icon-size(20px);
-      right: $spacing-sm;
+      @include icon-size('sm');
+      right: $spacing-12;
     }
 
     .select-container__notification{
-      height: $button-height-lg;
+      height: 40px;
 
       .notification-message__icon{
-        @include svg-icon-size(20px);
+        @include icon-size('sm');
       }
 
       .notification-message__text{
-        @include font-size("14");
+        @include font-size('14');
       }
     }
   }
@@ -352,55 +324,42 @@
 // sm
 .select--sm {
   .select-selector {
-    height: $button-height-sm;
+    height: 24px;
   }
 
   .select-selector__button {
-    padding-left: $spacing-xs;
-    padding-right: $spacing-lg;
+    padding-left: $spacing-8;
+    padding-right: $spacing-24;
   }
 
   .select-selector__icon {
-    right: rem(4px);
-    width: rem(18px);
-    height: rem(18px);
-    margin-top: -$spacing-xs;
+    right: 4px;
+    width: 18px;
+    height: 18px;
+    margin-top: -$spacing-8;
   }
 
   .select-container {
     .select-selector__icon {
-      @include svg-icon-size(14px);
+      @include icon-size(14px);
     }
 
     .select-container__button {
-      @include stable-padding($spacing-3xs, $spacing-xs);
-      height: $button-height-sm;
-      line-height: 0.75;
+      padding: $spacing-2, $spacing-8;
+      height: 24px;
     }
 
     .select-container__icon {
-      @include svg-icon-size(16px);
+      @include icon-size('xs');
     }
 
     .select-container__text {
-      @include font-size("12");
+      @include font-size('12');
     }
 
     .select-container__notification{
-      height: $button-height-sm;
+      height: 24px;
     }
-  }
-}
-
-.select--right {
-  .select-container {
-    right: 0;
-  }
-}
-
-.select--left {
-  .select-container {
-    left: 0;
   }
 }
 
@@ -408,7 +367,7 @@
   .select-container {
     top: auto;
     bottom: calc(100% + 2px);
-    box-shadow: 0 0 rem(8px) 0 $box-shadow;
+    box-shadow: 0 0 8px 0 #CED3D9;
   }
 }
 
