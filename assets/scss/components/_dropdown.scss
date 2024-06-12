@@ -1,3 +1,6 @@
+// ---------------------
+//  TODO: [퍼블리싱] 클래스 재정의 및 리팩토링
+// ---------------------
 .dropdown {
     @include list;
     @include z-index('dropdown');
@@ -36,6 +39,10 @@
 
             .dropdown-button {
                 cursor: not-allowed;
+
+                &:active {
+                    background-color: $ui-02;
+                }
             }
 
             .dropdown-text {
@@ -53,6 +60,7 @@
     }
     
     &-text {
+        @include ellipsis;
         flex-grow: 1;
         color: $text-02;
     }
@@ -86,6 +94,7 @@
     
         .dropdown-button {
             padding: $spacing-4, $spacing-12;
+            height: 40px;
         }
     
         .dropdown-button {
@@ -121,6 +130,5 @@
         .context-submenu__text {
             @include font-size("12");
         }
-    }
-    
+    }  
   }

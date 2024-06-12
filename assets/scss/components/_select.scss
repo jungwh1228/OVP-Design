@@ -1,3 +1,6 @@
+// ---------------------
+//  TODO: [퍼블리싱] 클래스 재정의 및 리팩토링
+// ---------------------
 .select {
   position: relative;
   flex-shrink: 0;
@@ -35,15 +38,15 @@
     border: 1px solid $ui-04;
     border-radius: $border-radius-default;
 
-    &:active {
+    &:active:not(:disabled) {
       border-color: $secondary !important;
     }
 
-    &:hover {
+    &:hover:not(:disabled) {
       border-color: $text-03;
     }
 
-    &:focus {
+    &:focus:not(:disabled) {
       border-color: $secondary;
       box-shadow: 0 0 4px rgba(77, 174, 255, 0.4);
     }
@@ -94,6 +97,22 @@
     .dropdown {
       display: block;
     }
+
+    &.select-borderless{
+      .select-button,
+      .select-button:hover:not(:disabled) {
+        .select-title {
+          color: $secondary;
+        }
+        .select-icon {
+          fill: $secondary;
+        }
+      }
+      
+      .svg-icon {
+        fill: $secondary;
+      }
+    }
   }
 
   &-input {
@@ -140,7 +159,7 @@
         }
       }
 
-      &:active {
+      &:active:not(:disabled) {
         border-color: transparent !important;
         box-shadow: none;
         background-color: $ui-01;
@@ -158,10 +177,10 @@
     }
 
     .select-title {
-      color: $secondary;
+      color: $text-02;
     }
     .select-icon {
-      fill: $secondary;
+      fill: $icon-01;
     }
 
     // borderless - text-input
@@ -172,11 +191,11 @@
         background-color: transparent;
         border-color: transparent;
         box-shadow: none;
-        color: $secondary;
+        color: $text-02;
       }
 
       & + .select-icon {
-        fill: $secondary;
+        fill: $icon-01;
       }
 
       &:hover:not(:disabled) {
@@ -240,139 +259,5 @@
     .dropdown {
       @extend .dropdown-sm
     }
-  }
-  // disabled 스타일
-  &-disabled {
-    .select-button {
-      border-color: $hover-row !important;
-      cursor: not-allowed;
-      box-shadow: none;
-
-      &:hover:not(:disabled),
-      &:hover:active,
-      &:hover:focus {
-        box-shadow: none;
-        border-color: $hover-row !important;
-        cursor: not-allowed;
-      }
-
-      &:focus {
-        box-shadow: none;
-      }
-    }
-
-    .select-title {
-      color: $text-05;
-    }
-
-    .select-icon {
-      opacity: 0.5;
-    }
-
-    &.select-borderless {
-      .select-input {
-        cursor: not-allowed;
-
-        .text-input {
-          color: $text-05;
-        }
-
-        & + .select-icon {
-          fill: $text-05;
-        }
-
-        &:hover:not(:disabled),
-        &:hover:active,
-        &:hover:focus {
-          .text-input {
-            background-color: $ui-02 !important;
-            color: $text-05 !important;
-            cursor: not-allowed;
-          }
-
-          & + .select-icon {
-            fill: $text-05 !important;
-          }
-        }
-
-        &:active {
-          .text-input {
-            background-color: $ui-02 !important;
-            color: $text-05 !important;
-          }
-
-          & + .select-icon {
-            fill: $text-05 !important;
-          }
-        }
-
-        &:focus {
-          .text-input {
-            background-color: $ui-02;
-            color: $text-05;
-          }
-
-          & + .select-icon {
-            fill: $text-05;
-          }
-        }
-      }
-    }
-
-    &.select-open {
-      .select-icon {
-        transform: none;
-      }
-
-      .select-container {
-        display: none;
-      }
-    }
-  }
-
-}
-
-
-.select--borderless {
-  .select-selector__button {
-
-
-
-
-  }
-
-  // borderless - text-input
-  .select-selector__input {
-    .text-input {
-      background-color: transparent;
-      border-color: transparent;
-      box-shadow: none;
-    }
-
-
-  }
-}
-
-// -------------------------
-// select 화살표 UI 상태에 따른 컬러 값
-// -------------------------
-.select-container__item:hover,
-.select-container__item:active {
-  .select-container__button-icon {
-    fill: $primary;
-  }
-}
-
-.select-container__item--selected {
-  .select-container__button-icon {
-    fill: $primary;
-  }
-}
-
-.select-container__item--disabled {
-  .select-container__button-icon,
-  .select-container__button-icon:hover,
-  .select-container__button-icon:active {
-    fill: $hover-row;
   }
 }

@@ -1,0 +1,68 @@
+.pagination {
+    @include flex;
+  }
+  
+  .pagination__button,
+  .pagination__link {
+    @include button;
+    width: 32px;
+    height: 32px;
+    font-weight: 400;
+    background-color: transparent;
+    border-radius: $border-radius-default;
+    color: $text-02;
+  }
+  
+  .pagination__link {
+    &:hover:not(:disabled) {
+      background-color: $ui-01;
+      color: $text-02;
+    }
+  
+    &:focus,
+    &:focus:hover {
+      background-color: $primary;
+      color: $ui-02;
+  
+      .svg-icon {
+        fill: $ui-02;
+      }
+    }
+  
+    &--selected {
+      background-color: $primary;
+      color: $ui-02;
+  
+      .svg-icon {
+        fill: $ui-02;
+      }
+    }
+  }
+  
+  .pagination__list {
+    @include flex;
+  }
+  
+  .pagination__ellipsis {
+    display: block;
+    padding: 0 $spacing-8;
+  }
+  
+  .pagination__input {
+    font-weight: 500;
+    width: auto;
+    height: 28px;
+    padding: $spacing-4 $spacing-8;
+    line-height: 18px;
+    border-color: transparent;
+  }
+  
+  .pagination__dash {
+    margin-right: $spacing-4;
+    margin-left: $spacing-4;
+  }
+  
+  .pagination__last-page {
+    margin-right: $spacing-4;
+    margin-left: $spacing-4;
+  }
