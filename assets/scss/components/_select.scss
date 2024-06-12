@@ -4,6 +4,7 @@
   min-width: 64px;
 
   .dropdown {
+    display: none;
     top: calc(100% + 2px);
     width: 100%;
     max-height: 320px;
@@ -16,7 +17,7 @@
 
     &-notification > .notification-message{
       width: 100%;
-    
+
       .notification-message-text{
         @include ellipsis;
       }
@@ -46,7 +47,53 @@
       border-color: $secondary;
       box-shadow: 0 0 4px rgba(77, 174, 255, 0.4);
     }
+  }
 
+
+
+  &-title {
+    @include ellipsis;
+    color: $text-02;
+
+    &-icon {
+      @include icon-size('sm');
+      vertical-align: middle;
+    }
+  }
+
+  .svg-icon + .select-title {
+    margin-left: $spacing-4;
+  }
+
+  &-icon {
+    @include icon-size('sm');
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    right: $spacing-8;
+    transform: none;
+    pointer-events: none;
+  }
+
+
+  &.is-select-open {
+    .select-button,
+    .select-input {
+      border-color: $secondary;
+      box-shadow: 0 0 4px rgba(77, 174, 255, 0.4);
+
+      &:hover:not(:disabled) {
+        border-color: $secondary;
+      }
+    }
+
+    .select-icon {
+      transform: rotate(-180deg);
+    }
+
+    .dropdown {
+      display: block;
+    }
   }
 
   &-input {
@@ -72,73 +119,49 @@
         padding-left: $spacing-24 + $spacing-4;
       }
     }
-
-  }
-
-  &-title {
-    @include ellipsis;
-    color: $text-02;
-
-    &-icon {
-      @include icon-size('sm');
-      vertical-align: middle;
-    }
-  }
-
-  &-icon {
-    @include icon-size('sm');
-    position: absolute;
-    top: 50%;
-    margin-top: -10px;
-    right: $spacing-8;
-    transform: none;
-    pointer-events: none;
-  }
-
-
-
-
-
-  &.is-select-open {
-    .select-button,
-    .select-input {
-      border-color: $secondary;
-      box-shadow: 0 0 4px rgba(77, 174, 255, 0.4);
-
-      &:hover:not(:disabled) {
-        border-color: $secondary;
-      }
-    }
-
-    .select-icon {
-      transform: rotate(-180deg);
-    }
-  }
-
-  .dropdown {
-    display: block;
   }
 
   &.select-borderless {
     .select-button {
-      .select-title {
-        color: $secondary;
-      }
-      .select-icon {
-        fill: $secondary;
-      }
+      background-color: transparent;
+      border-color: transparent;
+      box-shadow: none;
 
       &:hover:not(:disabled) {
         border-color: transparent;
-        background-color: $ui-02;
+        background-color: $ui-01;
 
         .select-title {
-          color: $secondary;
+          color: $text-01;
         }
+
         .select-icon {
-          fill: $secondary;
+          fill: $text-01;
         }
       }
+
+      &:active {
+        border-color: transparent !important;
+        box-shadow: none;
+        background-color: $ui-01;
+
+        .select-selector__title {
+          color: $active-secondary;
+        }
+        .select-selector__icon {
+          fill: $active-secondary;
+        }
+      }
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    .select-title {
+      color: $secondary;
+    }
+    .select-icon {
+      fill: $secondary;
     }
 
     // borderless - text-input
@@ -146,6 +169,9 @@
       box-shadow: none;
 
       .text-input {
+        background-color: transparent;
+        border-color: transparent;
+        box-shadow: none;
         color: $secondary;
       }
 
@@ -155,19 +181,23 @@
 
       &:hover:not(:disabled) {
         .text-input {
-          background-color: $ui-02;
-          color: $secondary;
+          background-color: $ui-01;
+          color: $text-01;
         }
 
         & + .select-icon {
-          fill: $secondary;
+          fill: $text-01;
         }
       }
 
       &:active {
         .text-input {
-          background-color: $ui-02;
+          background-color: $ui-01;
           color: $secondary;
+        }
+
+        & + .select-icon {
+          fill: $secondary;
         }
       }
 
@@ -181,228 +211,134 @@
   }
 
 
+  // size
+&-lg {
+  .select-button {
+    height: 40px;
+  }
+
+  .dropdown {
+    @extend .dropdown-lg
+  }
 }
 
 
+  &-sm {
+    .select-button {
+      height: 24px;
+      padding-left: $spacing-8;
+      padding-right: $spacing-24;
+    }
 
-.select--disabled {
-  .select-selector__button {
-    border-color: $hover-row !important;
-    cursor: not-allowed;
-    box-shadow: none;
+    .select-icon {
+      right: 4px;
+      width: 18px;
+      height: 18px;
+      margin-top: -$spacing-8;
+    }
 
-    &:hover:not(:disabled),
-    &:hover:active,
-    &:hover:focus {
-      box-shadow: none;
+    .dropdown {
+      @extend .dropdown-sm
+    }
+  }
+  // disabled 스타일
+  &-disabled {
+    .select-button {
       border-color: $hover-row !important;
       cursor: not-allowed;
-    }
-
-    &:focus {
       box-shadow: none;
-    }
-  }
-
-  .select-selector__title {
-    color: $text-05;
-  }
-
-  .select-selector__icon {
-    opacity: 0.5;
-  }
-
-  // borderless - text-input
-  &.select--borderless {
-    .select-selector__input {
-      cursor: not-allowed;
-
-      .text-input {
-        color: $text-05;
-      }
-
-      & + .select-selector__icon {
-        fill: $text-05;
-      }
 
       &:hover:not(:disabled),
       &:hover:active,
       &:hover:focus {
-        .text-input {
-          background-color: $ui-02 !important;
-          color: $text-05 !important;
-          cursor: not-allowed;
-        }
-
-        & + .select-selector__icon {
-          fill: $text-05 !important;
-        }
-      }
-
-      &:active {
-        .text-input {
-          background-color: $ui-02 !important;
-          color: $text-05 !important;
-        }
-
-        & + .select-selector__icon {
-          fill: $text-05 !important;
-        }
+        box-shadow: none;
+        border-color: $hover-row !important;
+        cursor: not-allowed;
       }
 
       &:focus {
+        box-shadow: none;
+      }
+    }
+
+    .select-title {
+      color: $text-05;
+    }
+
+    .select-icon {
+      opacity: 0.5;
+    }
+
+    &.select-borderless {
+      .select-input {
+        cursor: not-allowed;
+
         .text-input {
-          background-color: $ui-02;
           color: $text-05;
         }
 
-        & + .select-selector__icon {
+        & + .select-icon {
           fill: $text-05;
+        }
+
+        &:hover:not(:disabled),
+        &:hover:active,
+        &:hover:focus {
+          .text-input {
+            background-color: $ui-02 !important;
+            color: $text-05 !important;
+            cursor: not-allowed;
+          }
+
+          & + .select-icon {
+            fill: $text-05 !important;
+          }
+        }
+
+        &:active {
+          .text-input {
+            background-color: $ui-02 !important;
+            color: $text-05 !important;
+          }
+
+          & + .select-icon {
+            fill: $text-05 !important;
+          }
+        }
+
+        &:focus {
+          .text-input {
+            background-color: $ui-02;
+            color: $text-05;
+          }
+
+          & + .select-icon {
+            fill: $text-05;
+          }
         }
       }
     }
-  }
-}
 
-.select--open.select--disabled {
-  .select-selector__icon {
-    transform: none;
-  }
-
-  .select-container {
-    display: none;
-  }
-}
-
-
-
-
-.svg-icon + .select-selector__title {
-  margin-left: $spacing-4;
-}
-
-
-
-// -------------------------
-// Size overwrite
-// -------------------------
-// lg
-.select--lg {
-  .select-selector {
-    height: 40px;
-  }
-
-  .select-container {
-    .select-container__button {
-      padding:$spacing-4 $spacing-12;
-      height: 40px;
-    }
-
-    .select-container__text {
-      @include font-size("14");
-    }
-
-    .select-container__icon {
-      @include icon-size('sm');
-      right: $spacing-12;
-    }
-
-    .select-container__notification{
-      height: 40px;
-
-      .notification-message__icon{
-        @include icon-size('sm');
+    &.select-open {
+      .select-icon {
+        transform: none;
       }
 
-      .notification-message__text{
-        @include font-size('14');
+      .select-container {
+        display: none;
       }
     }
   }
+
 }
 
-// sm
-.select--sm {
-  .select-selector {
-    height: 24px;
-  }
-
-  .select-selector__button {
-    padding-left: $spacing-8;
-    padding-right: $spacing-24;
-  }
-
-  .select-selector__icon {
-    right: 4px;
-    width: 18px;
-    height: 18px;
-    margin-top: -$spacing-8;
-  }
-
-  .select-container {
-    .select-selector__icon {
-      @include icon-size(14px);
-    }
-
-    .select-container__button {
-      padding: $spacing-2, $spacing-8;
-      height: 24px;
-    }
-
-    .select-container__icon {
-      @include icon-size('xs');
-    }
-
-    .select-container__text {
-      @include font-size('12');
-    }
-
-    .select-container__notification{
-      height: 24px;
-    }
-  }
-}
-
-.select--up {
-  .select-container {
-    top: auto;
-    bottom: calc(100% + 2px);
-    box-shadow: 0 0 8px 0 #CED3D9;
-  }
-}
 
 .select--borderless {
   .select-selector__button {
-    background-color: transparent;
-    border-color: transparent;
-    box-shadow: none;
 
-    &:hover:not(:disabled) {
-      background-color: $ui-01;
 
-      .select-selector__title {
-        color: $text-01;
-      }
-      .select-selector__icon {
-        fill: $text-01;
-      }
-    }
 
-    &:active {
-      border-color: transparent !important;
-      box-shadow: none;
-      background-color: $ui-01;
 
-      .select-selector__title {
-        color: $active-secondary;
-      }
-      .select-selector__icon {
-        fill: $active-secondary;
-      }
-    }
-    &:focus {
-      box-shadow: none;
-    }
   }
 
   // borderless - text-input
@@ -413,34 +349,7 @@
       box-shadow: none;
     }
 
-    &:hover:not(:disabled) {
-      .text-input {
-        background-color: $ui-01;
-        color: $text-01;
-      }
 
-      & + .select-selector__icon {
-        fill: $text-01;
-      }
-    }
-
-    &:active {
-      .text-input {
-        background-color: $ui-01;
-        color: $secondary;
-      }
-
-      & + .select-selector__icon {
-        fill: $secondary;
-      }
-    }
-
-    &:focus {
-      .text-input {
-        box-shadow: none;
-        color: $secondary;
-      }
-    }
   }
 }
 

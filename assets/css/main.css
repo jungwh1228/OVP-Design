@@ -2192,6 +2192,7 @@
   min-width: 64px;
 }
 .select .dropdown {
+  display: none;
   top: calc(100% + 2px);
   width: 100%;
   max-height: 320px;
@@ -2245,28 +2246,6 @@
   border-color: #4daeff;
   box-shadow: 0 0 4px rgba(77, 174, 255, 0.4);
 }
-.select-input {
-  height: 100%;
-}
-.select-input .text-input {
-  display: block;
-  @apply truncate;
-  width: 100%;
-  height: 100%;
-  padding-right: 24px;
-  color: #606974;
-  font-weight: 400;
-}
-.select-input-icon {
-  z-index: 1;
-  position: absolute;
-  left: 13px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.select-input-icon + .text-input {
-  padding-left: 28px;
-}
 .select-title {
   display: block;
   @apply truncate;
@@ -2276,6 +2255,9 @@
   width: 20px;
   height: 20px;
   vertical-align: middle;
+}
+.select .svg-icon + .select-title {
+  margin-left: 4px;
 }
 .select-icon {
   width: 20px;
@@ -2299,229 +2281,171 @@
 .select.is-select-open .select-icon {
   transform: rotate(-180deg);
 }
-.select .dropdown {
+.select.is-select-open .dropdown {
   display: block;
 }
-.select.select-borderless .select-button .select-title {
-  color: #4daeff;
+.select-input {
+  height: 100%;
 }
-.select.select-borderless .select-button .select-icon {
-  fill: #4daeff;
+.select-input .text-input {
+  display: block;
+  @apply truncate;
+  width: 100%;
+  height: 100%;
+  padding-right: 24px;
+  color: #606974;
+  font-weight: 400;
+}
+.select-input-icon {
+  z-index: 1;
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.select-input-icon + .text-input {
+  padding-left: 28px;
+}
+.select.select-borderless .select-button {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
 }
 .select.select-borderless .select-button:hover:not(:disabled) {
   border-color: transparent;
-  background-color: #ffffff;
+  background-color: #f7f9fc;
 }
 .select.select-borderless .select-button:hover:not(:disabled) .select-title {
-  color: #4daeff;
+  color: #212121;
 }
 .select.select-borderless .select-button:hover:not(:disabled) .select-icon {
+  fill: #212121;
+}
+.select.select-borderless .select-button:active {
+  border-color: transparent !important;
+  box-shadow: none;
+  background-color: #f7f9fc;
+}
+.select.select-borderless .select-button:active .select-selector__title {
+  color: #0088ff;
+}
+.select.select-borderless .select-button:active .select-selector__icon {
+  fill: #0088ff;
+}
+.select.select-borderless .select-button:focus {
+  box-shadow: none;
+}
+.select.select-borderless .select-title {
+  color: #4daeff;
+}
+.select.select-borderless .select-icon {
   fill: #4daeff;
 }
 .select.select-borderless .select-input {
   box-shadow: none;
 }
 .select.select-borderless .select-input .text-input {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
   color: #4daeff;
 }
 .select.select-borderless .select-input + .select-icon {
   fill: #4daeff;
 }
 .select.select-borderless .select-input:hover:not(:disabled) .text-input {
-  background-color: #ffffff;
-  color: #4daeff;
+  background-color: #f7f9fc;
+  color: #212121;
 }
 .select.select-borderless .select-input:hover:not(:disabled) + .select-icon {
-  fill: #4daeff;
+  fill: #212121;
 }
 .select.select-borderless .select-input:active .text-input {
-  background-color: #ffffff;
+  background-color: #f7f9fc;
   color: #4daeff;
+}
+.select.select-borderless .select-input:active + .select-icon {
+  fill: #4daeff;
 }
 .select.select-borderless .select-input:focus .text-input {
   box-shadow: none;
   color: #4daeff;
 }
-
-.select--disabled .select-selector__button {
-  border-color: #f0f3f6 !important;
-  cursor: not-allowed;
-  box-shadow: none;
-}
-.select--disabled .select-selector__button:hover:not(:disabled), .select--disabled .select-selector__button:hover:active, .select--disabled .select-selector__button:hover:focus {
-  box-shadow: none;
-  border-color: #f0f3f6 !important;
-  cursor: not-allowed;
-}
-.select--disabled .select-selector__button:focus {
-  box-shadow: none;
-}
-.select--disabled .select-selector__title {
-  color: #abafba;
-}
-.select--disabled .select-selector__icon {
-  opacity: 0.5;
-}
-.select--disabled.select--borderless .select-selector__input {
-  cursor: not-allowed;
-}
-.select--disabled.select--borderless .select-selector__input .text-input {
-  color: #abafba;
-}
-.select--disabled.select--borderless .select-selector__input + .select-selector__icon {
-  fill: #abafba;
-}
-.select--disabled.select--borderless .select-selector__input:hover:not(:disabled) .text-input, .select--disabled.select--borderless .select-selector__input:hover:active .text-input, .select--disabled.select--borderless .select-selector__input:hover:focus .text-input {
-  background-color: #ffffff !important;
-  color: #abafba !important;
-  cursor: not-allowed;
-}
-.select--disabled.select--borderless .select-selector__input:hover:not(:disabled) + .select-selector__icon, .select--disabled.select--borderless .select-selector__input:hover:active + .select-selector__icon, .select--disabled.select--borderless .select-selector__input:hover:focus + .select-selector__icon {
-  fill: #abafba !important;
-}
-.select--disabled.select--borderless .select-selector__input:active .text-input {
-  background-color: #ffffff !important;
-  color: #abafba !important;
-}
-.select--disabled.select--borderless .select-selector__input:active + .select-selector__icon {
-  fill: #abafba !important;
-}
-.select--disabled.select--borderless .select-selector__input:focus .text-input {
-  background-color: #ffffff;
-  color: #abafba;
-}
-.select--disabled.select--borderless .select-selector__input:focus + .select-selector__icon {
-  fill: #abafba;
-}
-
-.select--open.select--disabled .select-selector__icon {
-  transform: none;
-}
-.select--open.select--disabled .select-container {
-  display: none;
-}
-
-.svg-icon + .select-selector__title {
-  margin-left: 4px;
-}
-
-.select--lg .select-selector {
+.select-lg .select-button {
   height: 40px;
 }
-.select--lg .select-container .select-container__button {
-  padding: 4px 12px;
-  height: 40px;
-}
-.select--lg .select-container .select-container__text {
-  font-size: 14px;
-  line-height: 20px;
-}
-.select--lg .select-container .select-container__icon {
-  width: 20px;
-  height: 20px;
-  right: 12px;
-}
-.select--lg .select-container .select-container__notification {
-  height: 40px;
-}
-.select--lg .select-container .select-container__notification .notification-message__icon {
-  width: 20px;
-  height: 20px;
-}
-.select--lg .select-container .select-container__notification .notification-message__text {
-  font-size: 14px;
-  line-height: 20px;
-}
-
-.select--sm .select-selector {
+.select-sm .select-button {
   height: 24px;
-}
-.select--sm .select-selector__button {
   padding-left: 8px;
   padding-right: 24px;
 }
-.select--sm .select-selector__icon {
+.select-sm .select-icon {
   right: 4px;
   width: 18px;
   height: 18px;
   margin-top: -8px;
 }
-.select--sm .select-container .select-selector__icon {
-  width: 14px;
-  height: 14px;
+.select-disabled .select-button {
+  border-color: #f0f3f6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
 }
-.select--sm .select-container .select-container__button {
-  padding: 2px, 8px;
-  height: 24px;
+.select-disabled .select-button:hover:not(:disabled), .select-disabled .select-button:hover:active, .select-disabled .select-button:hover:focus {
+  box-shadow: none;
+  border-color: #f0f3f6 !important;
+  cursor: not-allowed;
 }
-.select--sm .select-container .select-container__icon {
-  width: 16px;
-  height: 16px;
+.select-disabled .select-button:focus {
+  box-shadow: none;
 }
-.select--sm .select-container .select-container__text {
-  font-size: 12px;
-  line-height: 18px;
+.select-disabled .select-title {
+  color: #abafba;
 }
-.select--sm .select-container .select-container__notification {
-  height: 24px;
+.select-disabled .select-icon {
+  opacity: 0.5;
+}
+.select-disabled.select-borderless .select-input {
+  cursor: not-allowed;
+}
+.select-disabled.select-borderless .select-input .text-input {
+  color: #abafba;
+}
+.select-disabled.select-borderless .select-input + .select-icon {
+  fill: #abafba;
+}
+.select-disabled.select-borderless .select-input:hover:not(:disabled) .text-input, .select-disabled.select-borderless .select-input:hover:active .text-input, .select-disabled.select-borderless .select-input:hover:focus .text-input {
+  background-color: #ffffff !important;
+  color: #abafba !important;
+  cursor: not-allowed;
+}
+.select-disabled.select-borderless .select-input:hover:not(:disabled) + .select-icon, .select-disabled.select-borderless .select-input:hover:active + .select-icon, .select-disabled.select-borderless .select-input:hover:focus + .select-icon {
+  fill: #abafba !important;
+}
+.select-disabled.select-borderless .select-input:active .text-input {
+  background-color: #ffffff !important;
+  color: #abafba !important;
+}
+.select-disabled.select-borderless .select-input:active + .select-icon {
+  fill: #abafba !important;
+}
+.select-disabled.select-borderless .select-input:focus .text-input {
+  background-color: #ffffff;
+  color: #abafba;
+}
+.select-disabled.select-borderless .select-input:focus + .select-icon {
+  fill: #abafba;
+}
+.select-disabled.select-open .select-icon {
+  transform: none;
+}
+.select-disabled.select-open .select-container {
+  display: none;
 }
 
-.select--up .select-container {
-  top: auto;
-  bottom: calc(100% + 2px);
-  box-shadow: 0 0 8px 0 #CED3D9;
-}
-
-.select--borderless .select-selector__button {
-  background-color: transparent;
-  border-color: transparent;
-  box-shadow: none;
-}
-.select--borderless .select-selector__button:hover:not(:disabled) {
-  background-color: #f7f9fc;
-}
-.select--borderless .select-selector__button:hover:not(:disabled) .select-selector__title {
-  color: #212121;
-}
-.select--borderless .select-selector__button:hover:not(:disabled) .select-selector__icon {
-  fill: #212121;
-}
-.select--borderless .select-selector__button:active {
-  border-color: transparent !important;
-  box-shadow: none;
-  background-color: #f7f9fc;
-}
-.select--borderless .select-selector__button:active .select-selector__title {
-  color: #0088ff;
-}
-.select--borderless .select-selector__button:active .select-selector__icon {
-  fill: #0088ff;
-}
-.select--borderless .select-selector__button:focus {
-  box-shadow: none;
-}
 .select--borderless .select-selector__input .text-input {
   background-color: transparent;
   border-color: transparent;
   box-shadow: none;
-}
-.select--borderless .select-selector__input:hover:not(:disabled) .text-input {
-  background-color: #f7f9fc;
-  color: #212121;
-}
-.select--borderless .select-selector__input:hover:not(:disabled) + .select-selector__icon {
-  fill: #212121;
-}
-.select--borderless .select-selector__input:active .text-input {
-  background-color: #f7f9fc;
-  color: #4daeff;
-}
-.select--borderless .select-selector__input:active + .select-selector__icon {
-  fill: #4daeff;
-}
-.select--borderless .select-selector__input:focus .text-input {
-  box-shadow: none;
-  color: #4daeff;
 }
 
 .select-container__item:hover .select-container__button-icon,
@@ -2851,37 +2775,38 @@
   display: none;
   margin-right: 2px;
 }
-.dropdown-lg .dropdown-list {
+.dropdown-lg .dropdown-list, .select-lg .dropdown .dropdown-list {
   min-width: 140px;
 }
-.dropdown-lg .dropdown-button {
+.dropdown-lg .dropdown-button, .select-lg .dropdown .dropdown-button {
   padding: 4px, 12px;
 }
-.dropdown-lg .dropdown-button {
+.dropdown-lg .dropdown-button, .select-lg .dropdown .dropdown-button {
   padding: 4px, 12px;
 }
-.dropdown-sm .dropdown-list {
+.dropdown-sm .dropdown-list, .select-sm .dropdown .dropdown-list {
   min-width: 110px;
 }
-.dropdown-sm .dropdown-button {
+.dropdown-sm .dropdown-button, .select-sm .dropdown .dropdown-button {
   padding: 2px 8px;
   height: 24px;
 }
-.dropdown-sm .dropdown-icon,
-.dropdown-sm .dropdown-action-button .svg-icon {
+.dropdown-sm .dropdown-icon, .select-sm .dropdown .dropdown-icon,
+.dropdown-sm .dropdown-action-button .svg-icon,
+.select-sm .dropdown .dropdown-action-button .svg-icon {
   width: 16px;
   height: 16px;
 }
-.dropdown-sm .dropdown-text {
+.dropdown-sm .dropdown-text, .select-sm .dropdown .dropdown-text {
   font-size: 12px;
   line-height: 18px;
 }
-.dropdown-sm .dropdown-button {
+.dropdown-sm .dropdown-button, .select-sm .dropdown .dropdown-button {
   padding: 2px 8px;
   height: 24px;
   line-height: 9px;
 }
-.dropdown-sm .context-submenu__text {
+.dropdown-sm .context-submenu__text, .select-sm .dropdown .context-submenu__text {
   font-size: 12px;
   line-height: 18px;
 }
