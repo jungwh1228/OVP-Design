@@ -119,9 +119,6 @@
     border: none;
     color: inherit;
     text-align: left;
-    // &:hover:not(:disabled) {
-    //   background-color: $ui-01;
-    // }
 
     &:active {
       background-color: $ui-01;
@@ -181,6 +178,10 @@
       color: $text-03;
     }
 
+    .svg-icon {
+      @include icon-size(18px);
+    }
+
     &:hover:not(:disabled) {
       background-color: $hover-row;
     }
@@ -199,6 +200,39 @@
 
     &:not(:last-child) {
       margin-right: $spacing-2;
+    }
+  }
+
+  
+  .is-#{$name}-item-disabled {
+    opacity: 0.4;
+
+    .#{$name}-button {
+        cursor: not-allowed;
+
+        &:active {
+            background-color: $ui-02;
+        }
+    }
+
+    .#{$name}-text {
+        color: $text-05;
+    }
+
+    .#{$name}-icon {
+        fill: $text-03;
+    }
+    &.is-#{$name}-item-selected {
+      &:hover {
+        background-color: $hover-ui-accent;
+        opacity: 0.4;
+      }
+    }
+  } 
+
+  &-item:hover {
+    &.is-#{$name}-item-disabled {
+      background-color: $ui-02;
     }
   }
 
@@ -226,18 +260,11 @@
         color: $primary;
       }
     }
-
-    // &.checkbox--disabled,
-    // &.checkbox--disabled:hover {
-    //   cursor: not-allowed;
-    //   background-color: $ui-02;
-    // }
   }
 
   &-item .radio {
-    @include ellipsis();
+    @include ellipsis;
     padding: $spacing-4 $spacing-8;
-    // background-color: $ui-02;
     height: 32px;
     flex: 1;
 
@@ -250,38 +277,26 @@
         color: $primary;
       }
     }
-
-    // &.radio--disabled,
-    // &.radio--disabled:hover {
-    //   cursor: not-allowed;
-    //   background-color: $ui-02;
-    // }
   }
 
   .is-#{$name}-item-selected {
     color: $primary;
     background-color: $hover-ui-accent;
-  }
 
-  &__item--selected &__text {
-    color: $primary;
-    font-weight: 500;
-  }
+    .#{$name}-text {
+      color: $primary;
+    }
 
-  &__item--selected &__icon,
-  &__item--selected &__subicon,
-  &__item--selected &__action-button .svg-icon {
-    fill: $primary;
-  }
+    .#{$name}-button:active {
+      .#{$name}-icon,
+      .#{$name}-subicon,
+      .#{$name}-action-button .svg-icon {
+        fill: $primary;
+      }
+    }
 
-  &__item--selected &__button:active &__icon,
-  &__item--selected &__button:active &__subicon,
-  &__item--selected &__button:active .svg-icon {
-    fill: $primary;
+    .#{$name}-action-button .button-text {
+      color: $primary;
+    }
   }
-
-  &__item--selected &__action-button .button__text {
-    color: $primary;
-  }
-
 }

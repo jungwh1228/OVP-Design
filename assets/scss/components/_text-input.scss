@@ -114,12 +114,11 @@
 
   &-icon {
     @include z-index('float');
+    @include icon-size('sm');
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: $spacing-8;
-    width: 20px;
-    height: 20px;
     border: none;
     padding: 0;
 
@@ -150,8 +149,7 @@
     cursor: pointer;
 
     .svg-icon {
-      width: 18px;
-      height: 18px;
+      @include icon-size(18px);
       fill: lighten($icon-01, 18%);
     }
 

@@ -249,9 +249,8 @@
     }
 
     .select-icon {
+      @include icon-size(18px);
       right: 4px;
-      width: 18px;
-      height: 18px;
       margin-top: -$spacing-8;
     }
 

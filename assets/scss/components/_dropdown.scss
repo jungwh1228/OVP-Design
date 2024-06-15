@@ -2,7 +2,7 @@
 //  TODO: [퍼블리싱] 클래스 재정의 및 리팩토링
 // ---------------------
 .dropdown {
-    @include list;
+    @include list(dropdown);
     @include z-index('dropdown');
     @include box-shadow('md');
     // display: none;
@@ -28,30 +28,6 @@
             .dropdown-submenu {
                 display: block;
             }
-
-            &.is-dropdown-item-disabled {
-                background-color: $ui-02;
-            }
-        }
-
-        &.is-dropdown-item-disabled {
-            opacity: 0.4;
-
-            .dropdown-button {
-                cursor: not-allowed;
-
-                &:active {
-                    background-color: $ui-02;
-                }
-            }
-
-            .dropdown-text {
-                color: $text-05;
-            }
-
-            .dropdown-icon {
-                fill: $text-03;
-            }
         }
     }
 
@@ -66,7 +42,7 @@
     }
 
     &-submenu {
-        @include list;
+        @include list(dropdown);
         @include box-shadow('md');
         @include z-index('dropdown');
         display: none;

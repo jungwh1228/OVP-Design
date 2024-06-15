@@ -27,7 +27,8 @@ $theme-colors: (
 
 @each $attr, $color in $theme-colors {
   .svg-icon-#{$attr} {
-    @include icon-color($color);
+    fill: $color;
+    color: $color;
   }
 
   .color-#{$attr} {

@@ -33,10 +33,10 @@
 //  }
 
 // 컬러 믹스인 (임시)
-@mixin icon-color($color) {
-  fill: $color;
-  color: $color;
-}
+// @mixin icon-color($color) {
+//   fill: $color;
+//   color: $color;
+// }
 
 // * Usage *
 // .svg-icon {
@@ -46,7 +46,7 @@
 
 .svg-icon {
   @include icon-size('sm');
-  @include icon-color($icon-01);
+  fill: $icon-01;
   display: inline-block;
   vertical-align: middle;
   flex-shrink: 0;

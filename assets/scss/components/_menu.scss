@@ -1,5 +1,5 @@
 .menu {
-  @include list;
+  @include list(menu);
   display: flex;
   flex-direction: column;
   border: 1px solid $ui-04;
@@ -60,7 +60,6 @@
     &-toolbar .text-input-group {
       width: 100%;
     }
-
 
     &-checkbox {
       display: inline-flex;
@@ -149,21 +148,25 @@
       }
     }
   }
+
+  &-lg {
+    .menu-button {
+        height: 40px;
+    }
+    .menu-text {
+      @include font-size('14');
+    }
+
+    .menu-action-button {
+      width: 24px;
+      height: 24px;
+      
+      .svg-icon {
+        @include icon-size('sm');
+      }
+    }
+  } 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
