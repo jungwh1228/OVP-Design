@@ -58,7 +58,7 @@
     &-icon {
         fill: $text-02;
     }
-    
+
     &-text {
         @include ellipsis;
         flex-grow: 1;
@@ -80,7 +80,7 @@
             padding: $spacing-4 0;
             background-color: $ui-02;
         }
-        
+
         &-icon {
             display: none;
             margin-right: $spacing-2;
@@ -91,44 +91,44 @@
         .dropdown-list {
             min-width: 140px;
         }
-    
+
         .dropdown-button {
-            padding: $spacing-4, $spacing-12;
+            padding: $spacing-4 $spacing-12;
             height: 40px;
         }
-    
+
         .dropdown-button {
-            padding: $spacing-4, $spacing-12;
+            padding: $spacing-4 $spacing-12;
         }
     }
-    
+
     &-sm {
         .dropdown-list {
             min-width: 110px;
         }
-    
+
         .dropdown-button {
             padding: $spacing-2 $spacing-8;
             height: 24px;
         }
-    
+
         .dropdown-icon,
         .dropdown-action-button .svg-icon {
             @include icon-size('xs');
         }
-    
+
         .dropdown-text {
             @include font-size('12');
         }
-    
+
         .dropdown-button {
             padding: $spacing-2 $spacing-8;
             height: 24px;
             line-height: 9px;
         }
-    
+
         .context-submenu__text {
             @include font-size("12");
         }
-    }  
+    }
   }

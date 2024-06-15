@@ -87,7 +87,7 @@
 // -------------------------
 // list
 // -------------------------
-@mixin list {
+@mixin list($name) {
   &-list + &-list::before {
     content: "";
     display: block;
@@ -192,7 +192,7 @@
         fill: $primary;
       }
 
-      .button__text {
+      .button-text {
         color: $primary;
       }
     }
@@ -201,4 +201,87 @@
       margin-right: $spacing-2;
     }
   }
+
+  &-item .checkbox {
+    @include ellipsis;
+    padding: $spacing-4 $spacing-8;
+    height: 32px;
+    flex-grow: 1;
+
+    .checkbox-label {
+      @include font-size('13');
+      width: 100%;
+    }
+
+    .checkbox-input:checked {
+      + .checkbox-label {
+        color: $primary;
+      }
+
+      + .checkbox-label .svg-icon {
+        fill: $primary;
+      }
+
+      + .checkbox-label span {
+        color: $primary;
+      }
+    }
+
+    // &.checkbox--disabled,
+    // &.checkbox--disabled:hover {
+    //   cursor: not-allowed;
+    //   background-color: $ui-02;
+    // }
+  }
+
+  &-item .radio {
+    @include ellipsis();
+    padding: $spacing-4 $spacing-8;
+    // background-color: $ui-02;
+    height: 32px;
+    flex: 1;
+
+    .radio-label {
+      width: 100%;
+    }
+
+    .radio-input:checked {
+      + .radio-label {
+        color: $primary;
+      }
+    }
+
+    // &.radio--disabled,
+    // &.radio--disabled:hover {
+    //   cursor: not-allowed;
+    //   background-color: $ui-02;
+    // }
+  }
+
+  .is-#{$name}-item-selected {
+    color: $primary;
+    background-color: $hover-ui-accent;
+  }
+
+  &__item--selected &__text {
+    color: $primary;
+    font-weight: 500;
+  }
+
+  &__item--selected &__icon,
+  &__item--selected &__subicon,
+  &__item--selected &__action-button .svg-icon {
+    fill: $primary;
+  }
+
+  &__item--selected &__button:active &__icon,
+  &__item--selected &__button:active &__subicon,
+  &__item--selected &__button:active .svg-icon {
+    fill: $primary;
+  }
+
+  &__item--selected &__action-button .button__text {
+    color: $primary;
+  }
+
 }
