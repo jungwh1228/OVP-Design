@@ -119,10 +119,6 @@
     border: none;
     color: inherit;
     text-align: left;
-
-    &:active {
-      background-color: $ui-01;
-    }
   }
 
   &-notification {
@@ -210,9 +206,9 @@
     .#{$name}-button {
         cursor: not-allowed;
 
-        &:active {
-            background-color: $ui-02;
-        }
+      &:active {
+        background-color: $hover-ui-accent;
+      }        
     }
 
     .#{$name}-text {
