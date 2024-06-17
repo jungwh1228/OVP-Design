@@ -1,0 +1,21 @@
+.data-card {
+    @include flex($direction:column, $vertical:flex-start);
+    gap: $spacing-16;
+    width: 100%;
+    padding: $spacing-16;
+    border: 1px solid $field-border;
+    border-radius: $border-radius-default;
+
+    &-function {
+        @include flex($horizontal:space-between);
+        width: 100%;
+    }
+
+    &-depict {
+        @include flex($direction:column, $vertical:flex-start);  
+    }
+
+    &-info {
+        @include flex;
+    }
+}

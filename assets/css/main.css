@@ -3653,6 +3653,35 @@
   display: block;
 }
 
+.data-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #dce1e8;
+  border-radius: 2px;
+}
+.data-card-function {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.data-card-depict {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+.data-card-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .v-group {
   display: flex;
   align-items: flex-start;
