@@ -199,7 +199,7 @@
     }
   }
 
-  
+
   .is-#{$name}-item-disabled {
     opacity: 0.4;
 
@@ -208,7 +208,7 @@
 
       &:active {
         background-color: $hover-ui-accent;
-      }        
+      }
     }
 
     .#{$name}-text {
@@ -224,7 +224,7 @@
         opacity: 0.4;
       }
     }
-  } 
+  }
 
   &-item:hover {
     &.is-#{$name}-item-disabled {

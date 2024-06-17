@@ -1,0 +1,75 @@
+@mixin progress-theme($color) {
+  .progressbar-gage {
+    background-color: $color;
+  }
+
+  &::-webkit-progress-value {
+    background-color: $color;
+  }
+}
+
+.progressbar {
+  overflow: hidden;
+  position: relative;
+  height: 18px;
+  background-color: $ui-04;
+  border-radius: 4px;
+  border: none;
+
+  &::-webkit-progress-bar {
+    overflow: hidden;
+    position: relative;
+    height: 18px;
+    background-color: $ui-04;
+    border-radius: 4px;
+  }
+
+  &::-webkit-progress-value {
+    @include z-index('float');
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: $primary;
+  }
+
+  &-gage {
+    @include z-index('float');
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: $primary;
+  }
+
+    .progressbar-text {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $ui-02;
+  }
+  // progressbar type
+  &-normal {
+    @include progress-theme($secondary);
+  }
+
+  &-critical {
+    @include progress-theme($negative);
+  }
+
+  &-major {
+    @include progress-theme(#34dca1);;
+  }
+
+  &-sm {
+    height: 6px;
+
+    &::-webkit-progress-bar {
+      height: 6px;
+    }
+  }
+}

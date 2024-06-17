@@ -5,6 +5,7 @@
 @import "./abstracts/variables";
 
 // mixins
+@import "./abstracts/font-face";
 @import "./abstracts/fonts";
 @import "./abstracts/z-index";
 @import "./abstracts/box-shadow";
@@ -36,8 +37,7 @@
 @import "./components/dropdown";
 @import "./components/menu";
 @import "./components/toggle-button";
-
-
+@import "./components/accordion";
 
 
 

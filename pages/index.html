@@ -750,17 +750,81 @@
             </ul>
           </div>
         </div>
-        <div class="select select-borderless" style="width: 150px;">
+        <div class="select select-borderless is-select-open" style="width: 150px;">
           <button class="select-button">
-            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-              <path fill-rule="evenodd" d="M25.812 26c-.873-3.535-4.193-7.01-10.31-7-3.375.005-5.683 1.151-7.173 2.683A8.365 8.365 0 006.12 26h19.69zm-10.314-9c7.764-.012 11.984 4.983 12.497 9.896A1 1 0 0127 28H5a1 1 0 01-.999-1.05c.113-2.242 1.013-4.727 2.894-6.661 1.9-1.953 4.74-3.283 8.603-3.289z" clip-rule="evenodd"/>
-              <path fill-rule="evenodd" d="M15.5 17a5.5 5.5 0 100-11 5.5 5.5 0 000 11zm0 2a7.5 7.5 0 100-15 7.5 7.5 0 000 15z" clip-rule="evenodd"/>
-            </svg>
-            <span class="select-title">선택하기ddd</span>
+            <span class="select-title">테이블 타입</span>
+            <div class="badge badge-cyan badge-sm">
+              <span class="badge-text">2</span>
+            </div>
             <svg class="select-icon svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
               <path fill-rule="evenodd" d="M8.293 11.293a1 1 0 011.414 0L16 17.586l6.293-6.293a1 1 0 011.414 1.414l-7 7a1 1 0 01-1.414 0l-7-7a1 1 0 010-1.414z" clip-rule="evenodd"/>
             </svg>
           </button>
+          <div class="dropdown">
+            <div class="dropdown-search">
+              <div class="text-input-group">
+                <span class="text-input-group-icon">
+                  <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <path fill-rule="evenodd" d="M13.336 5.028a8.308 8.308 0 100 16.616 8.308 8.308 0 000-16.616zm-7.309 1a10.337 10.337 0 0115.3 13.865l7.376 7.376a1.014 1.014 0 11-1.434 1.434l-7.376-7.376A10.335 10.335 0 013 13.337c0-2.742 1.089-5.371 3.027-7.31z" clip-rule="evenodd"></path>
+                  </svg>
+                </span>
+                <label for="inp-group-01" class="hidden-text">Label</label>
+                <input type="text" id="input-group-01" class="text-input" placeholder="검색어 입력">
+                <button class="text-input-group-clear-button">
+                  <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <path d="M7.515 24.485a1 1 0 010-1.414L23.07 7.515a1 1 0 111.414 1.414L8.93 24.485a1 1 0 01-1.414 0z"></path>
+                    <path d="M24.485 24.485a1 1 0 01-1.414 0L7.515 8.93a1 1 0 111.414-1.414L24.485 23.07a1 1 0 010 1.414z"></path>
+                  </svg>
+                  <span class="hidden-text">지우기</span>
+                </button>
+              </div>
+            </div>
+            <ul class="dropdown-list" style="max-height: 150px;">
+              <li class="dropdown-item">
+                <div class="checkbox">
+                  <input id="dropdown-01" type="checkbox" class="checkbox-input" value="label">
+                  <label for="dropdown-01" class="checkbox-label">컬럼 1</label>
+                </div>
+              </li>
+              <li class="dropdown-item">
+                <div class="checkbox">
+                  <input id="dropdown-02" type="checkbox" class="checkbox-input" value="label">
+                  <label for="dropdown-02" class="checkbox-label">컬럼 2</label>
+                </div>
+              </li>
+              <li class="dropdown-item is-dropdown-item-disabled">
+                <div class="checkbox">
+                  <input id="dropdown-03" type="checkbox" class="checkbox-input" value="label">
+                  <label for="dropdown-03" class="checkbox-label">컬럼 3</label>
+                </div>
+              </li>
+              <li class="dropdown-item">
+                <div class="checkbox">
+                  <input id="dropdown-04" type="checkbox" class="checkbox-input" value="label">
+                  <label for="dropdown-04" class="checkbox-label">컬럼 4</label>
+                </div>
+              </li>
+              <li class="dropdown-item">
+                <div class="checkbox">
+                  <input id="dropdown-05" type="checkbox" class="checkbox-input" value="label">
+                  <label for="dropdown-05" class="checkbox-label">컬럼 5</label>
+                </div>
+              </li>
+            </ul>
+            <div class="dropdown-foot">
+              <button class="button button-tertiary" type="button">
+                <span>초기화</span>
+              </button>
+              <div class="dropdown-foot-buttons">
+                <button class="button button-link" type="button">
+                  <span>취소</span>
+                </button>
+                <button class="button button-primary" type="button">
+                  <span>확인</span>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="select select-borderless" style="width: 150px;">
           <button class="select-button" disabled>
@@ -802,7 +866,7 @@
               </li>
             </ul>
         </div>
-        <div class="menu ">
+        <div class="menu">
           <div class="menu-body">
             <ul class="menu-list">
               <li class="menu-item">
@@ -813,13 +877,13 @@
                   <button class="menu-action-button" type="button" title="위로 이동">
                     <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <path fill-rule="evenodd" d="M26.707 21.707a1 1 0 01-1.414 0L16 12.414l-9.293 9.293a1 1 0 01-1.414-1.414l10-10a1 1 0 011.414 0l10 10a1 1 0 010 1.414z" clip-rule="evenodd"/>
-                    </svg>                    
+                    </svg>
                   </button>
                   <button class="menu-action-button" type="button" title="아래로 이동">
                     <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <path fill-rule="evenodd" d="M5.293 10.293a1 1 0 011.414 0L16 19.586l9.293-9.293a1 1 0 111.414 1.414l-10 10a1 1 0 01-1.414 0l-10-10a1 1 0 010-1.414z" clip-rule="evenodd"/>
                     </svg>
-                    
+
                   </button>
                   <button class="menu-action-button" type="button" title="삭제">
                     <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -837,13 +901,13 @@
                   <button class="menu-action-button" type="button" title="위로 이동">
                     <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <path fill-rule="evenodd" d="M26.707 21.707a1 1 0 01-1.414 0L16 12.414l-9.293 9.293a1 1 0 01-1.414-1.414l10-10a1 1 0 011.414 0l10 10a1 1 0 010 1.414z" clip-rule="evenodd"/>
-                    </svg>                    
+                    </svg>
                   </button>
                   <button class="menu-action-button" type="button" title="아래로 이동">
                     <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <path fill-rule="evenodd" d="M5.293 10.293a1 1 0 011.414 0L16 19.586l9.293-9.293a1 1 0 111.414 1.414l-10 10a1 1 0 01-1.414 0l-10-10a1 1 0 010-1.414z" clip-rule="evenodd"/>
                     </svg>
-                    
+
                   </button>
                   <button class="menu-action-button" type="button" title="삭제">
                     <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -861,13 +925,13 @@
                   <button class="menu-action-button" type="button" title="위로 이동">
                     <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <path fill-rule="evenodd" d="M26.707 21.707a1 1 0 01-1.414 0L16 12.414l-9.293 9.293a1 1 0 01-1.414-1.414l10-10a1 1 0 011.414 0l10 10a1 1 0 010 1.414z" clip-rule="evenodd"/>
-                    </svg>                    
+                    </svg>
                   </button>
                   <button class="menu-action-button" type="button" title="아래로 이동">
                     <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <path fill-rule="evenodd" d="M5.293 10.293a1 1 0 011.414 0L16 19.586l9.293-9.293a1 1 0 111.414 1.414l-10 10a1 1 0 01-1.414 0l-10-10a1 1 0 010-1.414z" clip-rule="evenodd"/>
                     </svg>
-                    
+
                   </button>
                   <button class="menu-action-button" type="button" title="삭제">
                     <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -885,13 +949,13 @@
                   <button class="menu-action-button" type="button" title="위로 이동">
                     <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <path fill-rule="evenodd" d="M26.707 21.707a1 1 0 01-1.414 0L16 12.414l-9.293 9.293a1 1 0 01-1.414-1.414l10-10a1 1 0 011.414 0l10 10a1 1 0 010 1.414z" clip-rule="evenodd"/>
-                    </svg>                    
+                    </svg>
                   </button>
                   <button class="menu-action-button" type="button" title="아래로 이동">
                     <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <path fill-rule="evenodd" d="M5.293 10.293a1 1 0 011.414 0L16 19.586l9.293-9.293a1 1 0 111.414 1.414l-10 10a1 1 0 01-1.414 0l-10-10a1 1 0 010-1.414z" clip-rule="evenodd"/>
                     </svg>
-                    
+
                   </button>
                   <button class="menu-action-button" type="button" title="삭제">
                     <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -903,6 +967,135 @@
               </li>
             </ul>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="gap-8 v-group">
+      <div class="gap-8 h-group">
+        <div class="toggle-button" role="radiogroup">
+          <!-- is-toggle-button-item-selected 클래스 추가시 버튼 활성화 -->
+          <button class="toggle-button-item is-toggle-button-item-selected" type="button">
+            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+              <path fill-rule="evenodd" d="M13.336 5.028a8.308 8.308 0 100 16.616 8.308 8.308 0 000-16.616zm-7.309 1a10.337 10.337 0 0115.3 13.865l7.376 7.376a1.014 1.014 0 11-1.434 1.434l-7.376-7.376A10.335 10.335 0 013 13.337c0-2.742 1.089-5.371 3.027-7.31z" clip-rule="evenodd"/>
+            </svg>
+            <span class="toggle-button-text">Toggle Button</span>
+          </button>
+          <button class="toggle-button-item" type="button">
+            <span class="toggle-button-text">Toggle Button</span>
+          </button>
+          <button class="toggle-button-item" type="button">
+            <span class="toggle-button-text">Toggle Button</span>
+          </button>
+          <button class="toggle-button-item" type="button">
+            <span class="toggle-button-text">Toggle Button</span>
+          </button>
+        </div>
+        <div class="toggle-button toggle-button-sm" role="radiogroup">
+          <!-- toggle-button__item--selected 클래스 추가시 버튼 활성화 -->
+          <button class="toggle-button-item is-toggle-button-item-selected" type="button">
+            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+              <path fill-rule="evenodd" d="M6 5a1 1 0 011-1h11a1 1 0 110 2H8v12a1 1 0 11-2 0V5z" clip-rule="evenodd"/>
+              <path fill-rule="evenodd" d="M13 10v16h11V10H13zm-1-2a1 1 0 00-1 1v18a1 1 0 001 1h13a1 1 0 001-1V9a1 1 0 00-1-1H12z" clip-rule="evenodd"/>
+            </svg>
+            <span class="hidden-text">toggle button</span>
+          </button>
+          <button class="toggle-button-item" type="button">
+            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+              <path fill-rule="evenodd" d="M6 5a1 1 0 011-1h11a1 1 0 110 2H8v12a1 1 0 11-2 0V5z" clip-rule="evenodd"/>
+              <path fill-rule="evenodd" d="M13 10v16h11V10H13zm-1-2a1 1 0 00-1 1v18a1 1 0 001 1h13a1 1 0 001-1V9a1 1 0 00-1-1H12z" clip-rule="evenodd"/>
+            </svg>
+            <span class="hidden-text">toggle button</span>
+          </button>
+          <button class="toggle-button-item" type="button">
+            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+              <path fill-rule="evenodd" d="M6 5a1 1 0 011-1h11a1 1 0 110 2H8v12a1 1 0 11-2 0V5z" clip-rule="evenodd"/>
+              <path fill-rule="evenodd" d="M13 10v16h11V10H13zm-1-2a1 1 0 00-1 1v18a1 1 0 001 1h13a1 1 0 001-1V9a1 1 0 00-1-1H12z" clip-rule="evenodd"/>
+            </svg>
+            <span class="hidden-text">toggle button</span>
+          </button>
+          <button class="toggle-button-item" type="button" disabled="">
+            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+              <path fill-rule="evenodd" d="M6 5a1 1 0 011-1h11a1 1 0 110 2H8v12a1 1 0 11-2 0V5z" clip-rule="evenodd"/>
+              <path fill-rule="evenodd" d="M13 10v16h11V10H13zm-1-2a1 1 0 00-1 1v18a1 1 0 001 1h13a1 1 0 001-1V9a1 1 0 00-1-1H12z" clip-rule="evenodd"/>
+            </svg>
+            <span class="hidden-text">toggle button</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="gap-8 v-group">
+      <div class="accordion" style="width: 250px;">
+        <div class="accordion-item">
+          <!-- accordion__head--open 클래스 추가시 open -->
+          <button class="accordion-head is-accordion-head-open">
+            <span class="accordion-head-title"> 내가 북마크한 데이터 모델 </span>
+            <svg class="accordion-head-icon svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+              <path fill-rule="evenodd" d="M8.293 11.293a1 1 0 011.414 0L16 17.586l6.293-6.293a1 1 0 011.414 1.414l-7 7a1 1 0 01-1.414 0l-7-7a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+          <div class="accordion-body" id="accordion-01">
+            <div class="accordion-vertical">
+              <ul class="accordion-vertical-list">
+                <li class="accordion-vertical-item">
+                  <div class="checkbox">
+                    <input id="accordion-01" type="checkbox" class="checkbox-input" value="label" checked>
+                    <label for="accordion-01" class="checkbox-label">
+                      <span class="checkbox-text">데이터 모델 A (소유자)</span>
+                    </label>
+                  </div>
+                  <div class="accordion-vertical-action-buttons">
+                    <button class="accordion-vertical-action-button" type="button">
+                      <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                        <path fill-rule="evenodd" d="M9 5.999v19.094l5.294-3.658a3.002 3.002 0 013.412 0L23 25.093V6H9zM8 4a1 1 0 00-1 1v21.999a1 1 0 001.569.822l6.862-4.742a1 1 0 011.138 0l6.862 4.742A1 1 0 0025 26.999v-22A1 1 0 0024 4H8z" clip-rule="evenodd"/>
+                      </svg>
+                    </button>
+                    <button class="accordion-vertical-action-button" type="button">
+                      <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                        <path d="M14.656 6.656a2.24 2.24 0 013.824 1.58v.007a2.24 2.24 0 11-3.824-1.587zM14.656 14.336a2.24 2.24 0 013.824 1.58v.008a2.24 2.24 0 11-3.824-1.588zM14.656 22.016a2.24 2.24 0 013.824 1.58v.007a2.24 2.24 0 11-3.824-1.587z"/>
+                      </svg>
+
+                    </button>
+                  </div>
+                </li>
+                <li class="accordion-vertical-item">
+                  <div class="checkbox">
+                    <input id="accordion-02" type="checkbox" class="checkbox-input" value="label">
+                    <label for="accordion-02" class="checkbox-label">데이터 모델 B</label>
+                  </div>
+                  <div class="accordion-vertical-action-buttons">
+                    <button class="accordion-vertical-action-button">
+                      <svg class="svg-icon accordion-vertical-icon" aria-hidden="true">
+                        <use xlink:href="#close"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+                <li class="accordion-vertical-item">
+                  <div class="checkbox">
+                    <input id="accordion-03" type="checkbox" class="checkbox-input" value="label">
+                    <label for="accordion-03" class="checkbox-label">데이터 모델 C</label>
+                  </div>
+                  <div class="accordion-vertical-action-buttons">
+                    <button class="accordion-vertical-action-button">
+                      <svg class="svg-icon accordion-vertical-icon" aria-hidden="true">
+                        <use xlink:href="#close"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <!-- accordion__head--open 클래스 추가시 open -->
+          <button class="accordion-head">
+            <span class="accordion-head-title"> 내가 등록한 데이터 모델 </span>
+            <svg class="accordion-head-icon svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+              <path fill-rule="evenodd" d="M8.293 11.293a1 1 0 011.414 0L16 17.586l6.293-6.293a1 1 0 011.414 1.414l-7 7a1 1 0 01-1.414 0l-7-7a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+
         </div>
       </div>
     </div>

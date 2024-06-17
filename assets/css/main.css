@@ -1,8 +1,32 @@
+@font-face {
+  font-family: "NotoSansKR";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/NotoSans-Light.woff2") format("woff2"), url("../fonts/NotoSans-Light.woff") format("woff"), url("../fonts/NotoSans-Light.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "NotoSansKR";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/NotoSans-Regular.woff2") format("woff2"), url("../fonts/NotoSans-Regular.woff") format("woff"), url("../fonts/NotoSans-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "NotoSansKR";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/NotoSans-Medium.woff2") format("woff2"), url("../fonts/NotoSans-Medium.woff") format("woff"), url("../fonts/NotoSans-Medium.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "NotoSansKR";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/NotoSans-Bold.woff2") format("woff2"), url("../fonts/NotoSans-Bold.woff") format("woff"), url("../fonts/NotoSans-Bold.ttf") format("truetype"); /* Safari, Android, iOS */
+}
 @tailwind base;
 /* reset */
 @layer base {
   * {
-    font-family: 'pretandard', 'Segoe UI', 'Open Sans', 'Helvetica Neue';
+    font-family: 'NotoSansKR', 'Segoe UI', -apple-system, 'Helvetica Neue', sans-serif;
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 0;
@@ -149,10 +173,10 @@
   width: 24px;
   height: 24px;
 }
-.button:has(.hidden-text).button-sm, .button.toggle-button-item-sm:has(.hidden-text), .text-input-group-search-button:has(.hidden-text).button-sm, .text-input-group-search-button.toggle-button-item-sm:has(.hidden-text) {
+.button:has(.hidden-text).button-sm, .text-input-group-search-button:has(.hidden-text).button-sm {
   width: 24px;
 }
-.button:has(.hidden-text).button-sm .button-icon, .button.toggle-button-item-sm:has(.hidden-text) .button-icon, .text-input-group-search-button:has(.hidden-text).button-sm .button-icon, .text-input-group-search-button.toggle-button-item-sm:has(.hidden-text) .button-icon {
+.button:has(.hidden-text).button-sm .button-icon, .text-input-group-search-button:has(.hidden-text).button-sm .button-icon {
   width: 16px;
   height: 16px;
 }
@@ -170,10 +194,10 @@
   width: 28px;
   height: 28px;
 }
-.button:has(.hidden-text).button.button-link.button-sm, .button.toggle-button-item-sm:has(.hidden-text).button.button-link, .text-input-group-search-button:has(.hidden-text).button-link.button-sm, .text-input-group-search-button.toggle-button-item-sm:has(.hidden-text).button-link, .button.notification-close-button:has(.hidden-text).button.button-sm, .button.notification-close-button.toggle-button-item-sm:has(.hidden-text).button, .notification-close-button.text-input-group-search-button:has(.hidden-text).button-sm, .notification-close-button.text-input-group-search-button.toggle-button-item-sm:has(.hidden-text) {
+.button:has(.hidden-text).button.button-link.button-sm, .text-input-group-search-button:has(.hidden-text).button-link.button-sm, .button.notification-close-button:has(.hidden-text).button.button-sm, .notification-close-button.text-input-group-search-button:has(.hidden-text).button-sm {
   width: 24px;
 }
-.button:has(.hidden-text).button.button-link.button-sm .button-icon, .button.toggle-button-item-sm:has(.hidden-text).button.button-link .button-icon, .text-input-group-search-button:has(.hidden-text).button-link.button-sm .button-icon, .text-input-group-search-button.toggle-button-item-sm:has(.hidden-text).button-link .button-icon, .button.notification-close-button:has(.hidden-text).button.button-sm .button-icon, .button.notification-close-button.toggle-button-item-sm:has(.hidden-text).button .button-icon, .notification-close-button.text-input-group-search-button:has(.hidden-text).button-sm .button-icon, .notification-close-button.text-input-group-search-button.toggle-button-item-sm:has(.hidden-text) .button-icon {
+.button:has(.hidden-text).button.button-link.button-sm .button-icon, .text-input-group-search-button:has(.hidden-text).button-link.button-sm .button-icon, .button.notification-close-button:has(.hidden-text).button.button-sm .button-icon, .notification-close-button.text-input-group-search-button:has(.hidden-text).button-sm .button-icon {
   width: 20px;
   height: 20px;
 }
@@ -188,28 +212,28 @@
   width: 24px;
   height: 24px;
 }
-.button-sm, .toggle-button-item-sm {
+.button-sm {
   height: 24px;
   gap: 2px;
   padding: 0 8px;
   font-size: 12px;
   line-height: 18px;
 }
-.button-sm .svg-icon, .toggle-button-item-sm .svg-icon {
+.button-sm .svg-icon {
   width: 16px;
   height: 16px;
 }
-.button-primary, .is-toggle-button-item-selected {
+.button-primary {
   background-color: #005acd;
   color: #ffffff;
 }
-.button-primary:hover:not(:disabled), .is-toggle-button-item-selected:hover:not(:disabled) {
+.button-primary:hover:not(:disabled) {
   background-color: #2678e1;
 }
-.button-primary:active:not(:disabled), .is-toggle-button-item-selected:active:not(:disabled) {
+.button-primary:active:not(:disabled) {
   background-color: #0050b6;
 }
-.button-primary .svg-icon, .is-toggle-button-item-selected .svg-icon {
+.button-primary .svg-icon {
   fill: #ffffff;
 }
 .button-secondary {
@@ -2255,6 +2279,9 @@
   height: 20px;
   vertical-align: middle;
 }
+.select-title + .badge {
+  margin-left: 4px;
+}
 .select .svg-icon + .select-title {
   margin-left: 4px;
 }
@@ -2289,9 +2316,6 @@
 }
 .select.is-select-open.select-borderless .select-button .select-icon,
 .select.is-select-open.select-borderless .select-button:hover:not(:disabled) .select-icon {
-  fill: #4daeff;
-}
-.select.is-select-open.select-borderless .svg-icon {
   fill: #4daeff;
 }
 .select-input {
@@ -2607,6 +2631,7 @@
   margin-left: 16px;
 }
 .dropdown-list {
+  overflow-y: auto;
   min-width: 110px;
   padding: 4px 0;
   background-color: #ffffff;
@@ -2622,6 +2647,24 @@
   @apply truncate;
   flex-grow: 1;
   color: #606974;
+}
+.dropdown-search {
+  padding: 0 4px 4px 4px;
+}
+.dropdown-foot {
+  display: flex;
+  align-items: center;
+  padding: 4px 4px 0 4px;
+  border-top: 1px solid #dce1e8;
+}
+.dropdown-foot-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+.dropdown:has(.dropdown-foot) {
+  min-width: 200px;
 }
 .dropdown-submenu {
   box-shadow: 0px 0px 8px 0px rgba(206, 211, 217, 0.7);
@@ -3205,6 +3248,10 @@
   height: 20px;
 }
 
+.toggle-buttons {
+  display: flex;
+}
+
 .toggle-button {
   display: flex;
   flex-direction: row;
@@ -3219,9 +3266,16 @@
   line-height: 1;
   letter-spacing: -0.5px;
 }
-
-.toggle-buttons {
-  display: flex;
+.toggle-button-sm .toggle-button-item {
+  height: 24px;
+  padding: 0 8px;
+}
+.toggle-button-sm .toggle-button-item .svg-icon {
+  width: 16px;
+  height: 16px;
+}
+.toggle-button-sm .toggle-button-item:has(.hidden-text) {
+  padding: 0 3px;
 }
 
 .toggle-button-item {
@@ -3237,6 +3291,8 @@
   cursor: pointer;
   background-color: rgba(171, 175, 186, 0.5);
   color: #ffffff;
+  height: 32px;
+  padding: 0 12px;
 }
 .toggle-button-item:focus {
   outline: none;
@@ -3269,8 +3325,25 @@
 .toggle-button-item:not(:only-child):last-child {
   border-radius: 0 2px 2px 0;
 }
-.toggle-button-item.is-toggle-button-item-selected.is-toggle-button-item-disabled, .toggle-button-item.is-toggle-button-item-selected:disabled, .toggle-button-item.is-toggle-button-item-selected:disabled:hover, .toggle-button-item.is-toggle-button-item-selected:disabled:focus {
+.toggle-button-item .is-toggle-button-item-selected.is-toggle-button-item-disabled, .toggle-button-item .is-toggle-button-item-selected:disabled, .toggle-button-item .is-toggle-button-item-selected:disabled:hover, .toggle-button-item .is-toggle-button-item-selected:disabled:focus {
   background-color: #005acd;
+}
+.toggle-button-item:has(.hidden-text) {
+  padding: 0 5px;
+}
+
+.is-toggle-button-item-selected {
+  background-color: #005acd;
+  color: #ffffff;
+}
+.is-toggle-button-item-selected:hover:not(:disabled) {
+  background-color: #2678e1;
+}
+.is-toggle-button-item-selected:active:not(:disabled) {
+  background-color: #0050b6;
+}
+.is-toggle-button-item-selected .svg-icon {
+  fill: #ffffff;
 }
 
 .toggle-button-tertiary .toggle-button-item {
@@ -3282,49 +3355,302 @@
   background-color: #f7f9fc;
 }
 .toggle-button-tertiary .toggle-button-item:active:not(:disabled) {
-  background-color: #b2bdcb;
+  background-color: #dce1e8;
 }
 .toggle-button-tertiary .toggle-button-item .svg-icon {
   fill: #606974;
 }
 .toggle-button-tertiary .toggle-button-item:not(:first-child) {
-  width: 32px;
   border-left: transparent;
 }
-.toggle-button-tertiary .is-toggle-button-item-selected,
-.toggle-button-tertiary .is-toggle-button-item-selected.is-toggle-button-item-disabled,
-.toggle-button-tertiary .is-toggle-button-item-selected:disabled,
-.toggle-button-tertiary .is-toggle-button-item-selected:disabled:hover,
-.toggle-button-tertiary .is-toggle-buttonitem-selected:disabled:focus {
+.toggle-button-tertiary .toggle-button-item.is-toggle-button-item-selected, .toggle-button-tertiary .toggle-button-item.is-toggle-button-item-selected.is-toggle-button-item-disabled, .toggle-button-tertiary .toggle-button-item.is-toggle-button-item-selected:disabled, .toggle-button-tertiary .toggle-button-item.is-toggle-button-item-selected:disabled:hover, .toggle-button-tertiary .toggle-button-item.is-toggle-button-item-selected:disabled:focus {
   background-color: #b2bdcb;
 }
-.toggle-button-tertiary .is-toggle-button-item-disabled,
-.toggle-button-tertiary .is-toggle-button-item-disabled:hover,
-.toggle-button-tertiary .is-toggle-button-item-disabled:focus,
-.toggle-button-tertiary .is-toggle-button-item-disabled:disabled,
-.toggle-button-tertiary .is-toggle-button-item-disabled:disabled:hover,
-.toggle-button-tertiary .istoggle-button-item-disabled:disabled:focus {
+.toggle-button-tertiary .toggle-button-item.is-toggle-button-item-disabled, .toggle-button-tertiary .toggle-button-item.is-toggle-button-item-disabled:hover, .toggle-button-tertiary .toggle-button-item.is-toggle-button-item-disabled:focus, .toggle-button-tertiary .toggle-button-item.is-toggle-button-item-disabled:disabled, .toggle-button-tertiary .toggle-button-item.is-toggle-button-item-disabled:disabled:hover, .toggle-button-tertiary .toggle-button-item.is-toggle-button-item-disabled:disabled:focus {
   background-color: #ffffff !important;
   opacity: 0.25;
   cursor: not-allowed;
 }
 
-.toggle-button-list {
+.accordion {
+  border: 1px solid #dce1e8;
+}
+.accordion-head {
   display: flex;
-  flex-wrap: wrap;
-  margin: -8px -4px;
-}
-
-.toggle-button-list .toggle-button {
-  margin-left: 0;
-  padding: 4px;
-}
-
-.toggle-button-list .toggle-button-text {
+  align-items: center;
+  justify-content: center;
+  transition-duration: 110ms;
+  transition-timing-function: ease-in-out;
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  white-space: nowrap;
+  cursor: pointer;
+  justify-content: flex-start;
   width: 100%;
-  word-break: keep-all;
-  word-wrap: break-word;
-  white-space: normal;
+  height: 32px;
+  padding: 4px 8px;
+  background-color: #f0f3f6;
+}
+.accordion-head:focus {
+  outline: none;
+}
+.accordion-head:disabled, .accordion-head:disabled:hover, .accordion-head:disabled:focus {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+.accordion-head-icon {
+  width: 24px;
+  height: 24px;
+  transition-duration: 110ms;
+  transition-timing-function: ease-in-out;
+}
+.accordion-head-icon + .accordion-head-title {
+  margin-left: 4px;
+}
+.accordion-head-icon-right {
+  margin-left: auto;
+  transform: rotate(180deg);
+}
+.accordion-head-title {
+  display: flex;
+  flex-grow: 1;
+  text-align: left;
+  color: #77889a;
+}
+.accordion-head-title-text {
+  display: block;
+  @apply truncate;
+  font-weight: 500;
+  color: #606974;
+}
+.accordion-head-subtitle {
+  margin-left: 4px;
+  font-weight: 400;
+  color: #606974;
+}
+.accordion-vertical-list + .accordion-vertical-list::before {
+  content: "";
+  display: block;
+  border-top: 1px solid #dce1e8;
+  margin: 4px 0;
+}
+.accordion-vertical-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.accordion-vertical-item:hover {
+  background-color: #f7f9fc;
+}
+.accordion-vertical-button {
+  display: block;
+  @apply truncate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 110ms;
+  transition-timing-function: ease-in-out;
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  white-space: nowrap;
+  cursor: pointer;
+  flex: 1;
+  height: 32px;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-weight: 400;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  text-align: left;
+}
+.accordion-vertical-button:focus {
+  outline: none;
+}
+.accordion-vertical-button:disabled, .accordion-vertical-button:disabled:hover, .accordion-vertical-button:disabled:focus {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+.accordion-vertical-notification {
+  display: flex;
+  flex: 1;
+  height: 32px;
+  padding: 4px 8px;
+  cursor: default;
+}
+.accordion-vertical-icon, .accordion-vertical-subicon {
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.accordion-vertical-icon + .accordion-vertical-text, .accordion-vertical-subicon + .accordion-vertical-text {
+  margin-left: 4px;
+}
+.accordion-vertical-button:active .accordion-vertical-text {
+  color: #005acd;
+}
+.accordion-vertical-button:active .accordion-vertical-icon, .accordion-vertical-button:active .accordion-vertical-subicon {
+  fill: #005acd;
+}
+.accordion-vertical-text {
+  display: block;
+  @apply truncate;
+  font-size: 13px;
+  line-height: 20px;
+  vertical-align: middle;
+  color: #212121;
+}
+.accordion-vertical-action-buttons {
+  display: flex;
+  margin-right: 8px;
+  z-index: 1;
+}
+.accordion-vertical-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 110ms;
+  transition-timing-function: ease-in-out;
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 2px;
+  background-color: transparent;
+}
+.accordion-vertical-action-button:focus {
+  outline: none;
+}
+.accordion-vertical-action-button:disabled, .accordion-vertical-action-button:disabled:hover, .accordion-vertical-action-button:disabled:focus {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+.accordion-vertical-action-button .button-text {
+  font-size: 13px;
+  line-height: 20px;
+  margin-left: 8px;
+  color: #77889a;
+}
+.accordion-vertical-action-button .svg-icon {
+  width: 18px;
+  height: 18px;
+}
+.accordion-vertical-action-button:hover:not(:disabled) {
+  background-color: #f0f3f6;
+}
+.accordion-vertical-action-button:active:not(:disabled) {
+  background-color: #f0f3f6;
+}
+.accordion-vertical-action-button:active:not(:disabled) .svg-icon {
+  fill: #005acd;
+}
+.accordion-vertical-action-button:active:not(:disabled) .button-text {
+  color: #005acd;
+}
+.accordion-vertical-action-button:not(:last-child) {
+  margin-right: 2px;
+}
+.accordion-vertical .is-accodion-vertical-item-disabled {
+  opacity: 0.4;
+}
+.accordion-vertical .is-accodion-vertical-item-disabled .accodion-vertical-button {
+  cursor: not-allowed;
+}
+.accordion-vertical .is-accodion-vertical-item-disabled .accodion-vertical-button:active {
+  background-color: #edf4ff;
+}
+.accordion-vertical .is-accodion-vertical-item-disabled .accodion-vertical-text {
+  color: #abafba;
+}
+.accordion-vertical .is-accodion-vertical-item-disabled .accodion-vertical-icon {
+  fill: #77889a;
+}
+.accordion-vertical .is-accodion-vertical-item-disabled.is-accodion-vertical-item-selected:hover {
+  background-color: #edf4ff;
+  opacity: 0.4;
+}
+.accordion-vertical-item:hover.is-accodion-vertical-item-disabled {
+  background-color: #ffffff;
+}
+.accordion-vertical-item .checkbox {
+  display: block;
+  @apply truncate;
+  padding: 4px 8px;
+  height: 32px;
+  flex-grow: 1;
+}
+.accordion-vertical-item .checkbox .checkbox-label {
+  font-size: 13px;
+  line-height: 20px;
+  width: 100%;
+}
+.accordion-vertical-item .checkbox .checkbox-input:checked + .checkbox-label {
+  color: #005acd;
+}
+.accordion-vertical-item .checkbox .checkbox-input:checked + .checkbox-label .svg-icon {
+  fill: #005acd;
+}
+.accordion-vertical-item .checkbox .checkbox-input:checked + .checkbox-label span {
+  color: #005acd;
+}
+.accordion-vertical-item .radio {
+  display: block;
+  @apply truncate;
+  padding: 4px 8px;
+  height: 32px;
+  flex: 1;
+}
+.accordion-vertical-item .radio .radio-label {
+  width: 100%;
+}
+.accordion-vertical-item .radio .radio-input:checked + .radio-label {
+  color: #005acd;
+}
+.accordion-vertical .is-accodion-vertical-item-selected {
+  color: #005acd;
+  background-color: #edf4ff;
+}
+.accordion-vertical .is-accodion-vertical-item-selected .accodion-vertical-text {
+  color: #005acd;
+}
+.accordion-vertical .is-accodion-vertical-item-selected .accodion-vertical-button:active .accodion-vertical-icon,
+.accordion-vertical .is-accodion-vertical-item-selected .accodion-vertical-button:active .accodion-vertical-subicon,
+.accordion-vertical .is-accodion-vertical-item-selected .accodion-vertical-button:active .accodion-vertical-action-button .svg-icon {
+  fill: #005acd;
+}
+.accordion-vertical .is-accodion-vertical-item-selected .accodion-vertical-action-button .button-text {
+  color: #005acd;
+}
+.accordion-vertical-item + .accordion-vertical-item {
+  border-top: 1px solid #dce1e8;
+}
+.accordion-vertical-text {
+  display: block;
+  @apply truncate;
+  width: 100%;
+  margin: 0;
+}
+.accordion-item:last-child .accordio-body {
+  border-bottom-width: 0;
+}
+.accordion-body {
+  display: none;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dce1e8;
+}
+.accordion .is-accordion-head-open .accordion-head-icon {
+  transform: rotate(-180deg);
+}
+.accordion .is-accordion-head-open .accordion-head-icon-right {
+  transform: rotate(0deg);
+}
+.accordion .is-accordion-head-open + .accordion-body {
+  display: block;
 }
 
 .v-group {

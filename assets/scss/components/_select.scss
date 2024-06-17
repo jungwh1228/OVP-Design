@@ -62,6 +62,10 @@
       @include icon-size('sm');
       vertical-align: middle;
     }
+
+    & + .badge {
+      margin-left: $spacing-4;
+    }
   }
 
   .svg-icon + .select-title {
@@ -107,10 +111,6 @@
         .select-icon {
           fill: $secondary;
         }
-      }
-
-      .svg-icon {
-        fill: $secondary;
       }
     }
   }

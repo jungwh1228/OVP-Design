@@ -3,7 +3,7 @@
 /* reset */
 @layer base {
   * {
-    @include font-family(pretandard);
+    @include font-family(sans);
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 0;

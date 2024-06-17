@@ -1,12 +1,12 @@
 $font-families: (
-        pretandard:
-        unquote(
-                        "'pretandard', 'Segoe UI', 'Open Sans', 'Helvetica Neue'"
-        ),
-        mono:
-        unquote(
-                        "'Consolas', 'Menlo', 'Courier', 'monospace'"
-        )
+  sans:
+  unquote(
+      "'NotoSansKR', 'Segoe UI', -apple-system, 'Helvetica Neue', sans-serif"
+  ),
+  mono:
+  unquote(
+      "'Consolas', 'Menlo', 'Courier', 'monospace'"
+  )
 );
 
 @mixin font-family($family-name) {
