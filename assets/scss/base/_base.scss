@@ -1,5 +1,19 @@
-// TODO: [퍼블리싱] 클래스 재정의 및 리팩토링
 .wrap {
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  padding-top: 50px;
+}
+
+
+
+
+// 임시 - html가이드페이지
+.wrap-guide {
   padding: 32px;
 
   .v-group + .v-group {
