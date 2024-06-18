@@ -75,6 +75,11 @@
   transition-timing-function: ease-in-out;
 }
 
+@mixin animation-slowly {
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
 //-------------------------------------------
 // IE10+ 크로스브라우징
 //-------------------------------------------
