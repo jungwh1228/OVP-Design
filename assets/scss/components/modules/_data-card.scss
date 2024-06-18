@@ -1,0 +1,75 @@
+.data-card {
+  @include flex($direction:column, $vertical:flex-start);
+  @include box-shadow('sm');
+  gap: $spacing-16;
+  width: 100%;
+  padding: $spacing-16;
+  border: 1px solid $field-border;
+  border-radius: $border-radius-default;
+  cursor: pointer;
+
+  &-function {
+    @include flex($horizontal:space-between);
+    width: 100%;
+  }
+
+  &-model {
+    @include flex;
+    gap: $spacing-8;
+
+    &-img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &-contents {
+    @include flex($direction:column, $vertical:flex-start);
+    gap: $spacing-4;
+  }
+
+  &-name {
+  @include font-size('18');
+  font-weight: 600;
+  color: $text-01;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &-depict {
+    color: $text-02
+  }
+
+  &-info {
+    @include flex;
+    gap: $spacing-24;
+
+    &-list {
+      @include flex;
+      gap:$spacing-16;
+      color: $text-02
+    }
+
+    &-title {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: -8px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 10px;
+        background:$ui-04;
+      }
+    }
+  }
+
+  &:hover {
+    border-color: $secondary;
+    box-shadow: 0 0 4px rgba(77, 174, 255, 0.4);
+  }
+}

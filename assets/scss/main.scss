@@ -38,9 +38,12 @@
 @import "./components/menu";
 @import "./components/toggle-button";
 @import "./components/accordion";
+@import "./components/progressbar";
+@import "./components/breadcrumb";
 
-//group
-@import "./components/group/data-card";
+
+//module
+@import "./components/modules/data-card";
 
 
 

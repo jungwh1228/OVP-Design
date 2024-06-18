@@ -3653,16 +3653,128 @@
   display: block;
 }
 
+.progressbar {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 18px;
+  background-color: #dce1e8;
+  border-radius: 4px;
+  border: none;
+}
+.progressbar::-webkit-progress-bar {
+  overflow: hidden;
+  position: relative;
+  height: 18px;
+  background-color: #dce1e8;
+  border-radius: 4px;
+}
+.progressbar::-webkit-progress-value {
+  z-index: 1;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #005acd;
+}
+.progressbar-gage {
+  z-index: 1;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #005acd;
+}
+.progressbar .progressbar-text {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+}
+.progressbar-normal .progressbar-gage {
+  background-color: #4daeff;
+}
+.progressbar-normal::-webkit-progress-value {
+  background-color: #4daeff;
+}
+.progressbar-critical .progressbar-gage {
+  background-color: #ef594f;
+}
+.progressbar-critical::-webkit-progress-value {
+  background-color: #ef594f;
+}
+.progressbar-major .progressbar-gage {
+  background-color: #34dca1;
+}
+.progressbar-major::-webkit-progress-value {
+  background-color: #34dca1;
+}
+.progressbar-sm {
+  height: 6px;
+}
+.progressbar-sm::-webkit-progress-bar {
+  height: 6px;
+}
+
+.breadcrumb {
+  display: flex;
+  height: 24px;
+}
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 6px;
+}
+.breadcrumb-item .svg-icon {
+  width: 18px;
+  height: 18px;
+}
+.breadcrumb-item.is-breadcrumb-selected .svg-icon {
+  fill: #606974;
+}
+.breadcrumb-item.is-breadcrumb-selected .breadcrumb-link {
+  color: #606974;
+}
+.breadcrumb-item:not(:last-child):after {
+  content: url("../../assets/images/icon/chevron-right-medium.svg");
+  position: absolute;
+  left: 100%;
+  top: -6px;
+  transform: scale(0.6);
+}
+.breadcrumb-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: #77889a;
+}
+.breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
 .data-card {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+  box-shadow: 0px 2px 0px 0px rgba(206, 211, 217, 0.2);
   gap: 16px;
   width: 100%;
   padding: 16px;
   border: 1px solid #dce1e8;
   border-radius: 2px;
+  cursor: pointer;
 }
 .data-card-function {
   display: flex;
@@ -3670,16 +3782,64 @@
   justify-content: space-between;
   width: 100%;
 }
-.data-card-depict {
+.data-card-model {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.data-card-model-img {
+  width: 32px;
+  height: 32px;
+}
+.data-card-contents {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+  gap: 4px;
+}
+.data-card-name {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #212121;
+}
+.data-card-name:hover {
+  text-decoration: underline;
+}
+.data-card-depict {
+  color: #606974;
 }
 .data-card-info {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 24px;
+}
+.data-card-info-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #606974;
+}
+.data-card-info-title {
+  position: relative;
+}
+.data-card-info-title::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 10px;
+  background: #dce1e8;
+}
+.data-card:hover {
+  border-color: #4daeff;
+  box-shadow: 0 0 4px rgba(77, 174, 255, 0.4);
 }
 
 .v-group {
