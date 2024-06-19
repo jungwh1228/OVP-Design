@@ -21,21 +21,21 @@
     height: 40px;
     background-color: $ui-02;
 
-    &:hover .tab-button-text {
+    &:hover .tab-text {
       color: $text-01;
     }
 
     &.is-tab-item-selected {
-      .tab-button-text {
+      .tab-text {
         color: $primary;
       }
 
-      &:hover .tab-button-text {
+      &:hover .tab-text {
         color: $primary;
       }
 
       .tab-button:focus:not(:disabled) {
-        .tab-button-text {
+        .tab-text {
           color: $primary;
         }
       }
@@ -53,7 +53,7 @@
       }
 
       &:hover {
-        .tab-button-text {
+        .tab-text {
           color: $text-02;
         }
       }
@@ -68,14 +68,14 @@
     padding: 0;
 
     &:focus:not(:disabled) {
-      .tab-button-text {
+      .tab-text {
         color: $text-01;
       }
     }
   }
 
 
-  &-button-text {
+  &-text {
     @include ellipsis;
     color: $text-02;
   }
@@ -168,17 +168,17 @@
 
       &:hover {
         background-color: darken($hover-field-border, 6%);
-      }
 
-      &:hover .tab-button-text {
-        color: rgba($text-04, 0.85);
+        .tab-text {
+          color: rgba($text-04, 0.85);
+        }
       }
 
       .tab-button {
         justify-content: center;
 
         &:focus:not(:disabled) {
-          .tab-button-text {
+          .tab-text {
             color: $text-02;
           }
         }
@@ -193,7 +193,7 @@
       &:hover {
         background-color: $ui-01;
 
-        .tab-button-text {
+        .tab-text {
           color: $text-03;
         }
       }
@@ -203,7 +203,7 @@
       }
 
       .tab-button:focus:not(:disabled) {
-        .tab-button-text {
+        .tab-text {
           color: $text-02;
         }
       }
@@ -214,7 +214,7 @@
         background-color: $hover-field-border;
       }
       .tab-button:focus:not(:disabled) {
-        .tab-button-text {
+        .tab-text {
           color: rgba($text-04, 0.85);
         }
       }
@@ -224,11 +224,11 @@
       border-color: $field-border;
     }
 
-    .is-tab-item-selected .tab-button-text {
+    .is-tab-item-selected .tab-text {
       color: $text-03;
     }
 
-    .tab-button-text {
+    .tab-text {
       margin-top: $spacing-2;
       color: rgba($text-04, 0.85);
     }

@@ -63,26 +63,21 @@
     margin-bottom: $spacing-24;
   }
 
-  .notification-full-text {
+  .notification-full-title {
     @include font-size('24');
     text-align: center;
   }
 
-  &-detail {
-    @include flex($direction: column);
-    text-align: center;
-
-    .notification {
-      justify-content: center;
-      margin-top: $spacing-32;
-    }
-
-    .button {
-      margin-top: $spacing-32;
-    }
+  .notification {
+    justify-content: center;
+    margin-top: $spacing-32;
+  }
+  
+  .button {
+    margin-top: $spacing-32;
   }
 
-  &-subtext {
+  &-text {
     @include font-size("18");
     font-weight: 400;
     margin-top: $spacing-12;
@@ -208,11 +203,11 @@
         margin-bottom: $spacing-12;
       }
 
-      .notification-full-text {
+      .notification-full-title {
         @include font-size('18');
       }
 
-      .notification-full-subtext {
+      .notification-full-text {
         @include font-size('12');
         margin-top: $spacing-8;
       }

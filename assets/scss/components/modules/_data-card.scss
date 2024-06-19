@@ -1,4 +1,4 @@
-.data-card {
+.card {
   @include flex($direction:column, $vertical:flex-start);
   @include box-shadow('sm');
   gap: $spacing-16;
@@ -28,7 +28,7 @@
     gap: $spacing-4;
   }
 
-  &-name {
+  &-title {
   @include font-size('18');
   font-weight: 600;
   color: $text-01;
@@ -38,7 +38,7 @@
     }
   }
 
-  &-depict {
+  &-desc {
     color: $text-02
   }
 

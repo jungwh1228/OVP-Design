@@ -45,7 +45,7 @@
     opacity: 0.5;
     box-shadow: none;
 
-    ~ .text-input-group-button {
+    ~ .search-group-button {
       display: none;
     }
   }
@@ -94,11 +94,9 @@
 }
 
 // -------------------------
-// input + icon
+// search input
 // -------------------------
-// TODO: IMA 반영시 주의해야할 점
-// 1. .text-input-group__input -> .text-input 으로 변경
-.text-input-group {
+.search-group {
   position: relative;
 
   .text-input {
@@ -214,14 +212,14 @@
       }
     }
 
-    .text-input-group-icon {
+    .search-group-icon {
       left: $spacing-12;
 
       & ~ .text-input {
         padding-left: 12px + 20px + 4px; // left + width + text사이와의 여백
       }
     }
-    .text-input-group-clear-button {
+    .search-group-clear-button {
       width: 20px;
       height: 20px;
 
@@ -234,7 +232,7 @@
       }
     }
 
-    .text-input-group-search-button {
+    .search-group-search-button {
       width: 38px;
       height: 38px;
       .svg-icon {
@@ -251,7 +249,7 @@
       }
     }
 
-    .text-input-group-icon {
+    .search-group-icon {
       left: $spacing-4;
       width: 14px;
       height: 14px;
@@ -261,14 +259,14 @@
       }
     }
 
-    .text-input-group-clear-button,
-    .text-input-group-button {
+    .search-group-clear-button,
+    .search-group-button {
       right: 4px;
       width: 14px;
       height: 14px;
     }
 
-    .text-input-group-clear-button {
+    .search-group-clear-button {
       // 뒤에 search-button 있는 경우
       &:not(&:last-child) {
         right: $spacing-32;
@@ -279,7 +277,7 @@
       }
     }
 
-    .text-input-group-search-button {
+    .search-group-search-button {
       width: 22px;
       height: 22px;
       .svg-icon {
@@ -288,7 +286,7 @@
     }
   }
 
-  &.is-text-input-group-disabled {
+  &.is-search-group-disabled {
     button {
       opacity: 0.4;
       cursor: not-allowed;
@@ -299,7 +297,3 @@
     }
   }
 }
-
-// .text-input-group__input {
-//   @include text-input;
-// }

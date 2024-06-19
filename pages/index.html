@@ -470,13 +470,11 @@
           <svg class="svg-icon notification-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
             <path fill-rule="evenodd" d="M17.588 4.192c-.876-1.593-2.302-1.586-3.175 0L2.356 26.115C1.479 27.708 2.279 29 4.145 29h23.712c1.865 0 2.662-1.298 1.789-2.885L17.588 4.192zM14.3 10.4h3.2v10.4h-3.2V10.4zm0 12h3.2v3.2h-3.2v-3.2z" clip-rule="evenodd"/>
           </svg>
-          <p class="notification-full-text">Warning Notification</p>
-          <div class="notification-full-detail">
-            <span class="notification-full-subtext">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, consequuntur.</span>
-            <button class="button button-negative button-lg" type="button" style="width: 150px;">
-              <span class="button-text">확인</span>
-            </button>
-          </div>
+          <p class="notification-full-title">Warning Notification</p>
+          <span class="notification-full-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, consequuntur.</span>
+          <button class="button button-negative button-lg" type="button" style="width: 150px;">
+            <span class="button-text">확인</span>
+          </button>
         </div>
       </div>
     </div>
@@ -486,19 +484,19 @@
           <ul class="tab-bar">
             <li class="tab-item">
               <button type="button" class="tab-button">
-                <span class="tab-button-text">Tab1</span>
+                <span class="tab-text">Tab1</span>
               </button>
             </li>
             <!-- 선택된 항목에 is-tab-item-selected 클래스 추가 -->
             <li class="tab-item is-tab-item-selected">
               <button type="button" class="tab-button">
-                <span class="tab-button-text">Tab2</span>
+                <span class="tab-text">Tab2</span>
               </button>
             </li>
             <!-- 비활성 항목에 is-tab-item-disabled 클래스 추가 -->
             <li class="tab-item is-tab-item-disabled">
               <button type="button" class="tab-button">
-                <span class="tab-button-text">Tab5 - removable, disabled</span>
+                <span class="tab-text">Tab5 - removable, disabled</span>
               </button>
             </li>
           </ul>
@@ -546,7 +544,7 @@
       <div class="gap-8 h-group">
         <div class="tag tag-lg">
           <a href="https://www.naver.com/" target="_blank" class="tag-link">
-            <span class="tag-label">TAG1</span>
+           TAG1
           </a>
           <button class="tag-delete-button">
             <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -558,7 +556,7 @@
         </div>
         <div class="tag tag-red tag-lg">
           <a href="https://www.naver.com/" target="_blank" class="tag-link">
-            <span class="tag-label">TAG1</span>
+            TAG1
           </a>
           <button class="tag-delete-button">
             <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -570,7 +568,7 @@
         </div>
         <div class="tag tag-cyan">
           <a href="https://www.naver.com/" target="_blank" class="tag-link">
-            <span class="tag-label">TAG1</span>
+            TAG1
           </a>
           <button class="tag-delete-button">
             <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -582,7 +580,7 @@
         </div>
         <div class="tag tag-teal">
           <a href="https://www.naver.com/" target="_blank" class="tag-link">
-            <span class="tag-label">TAG1</span>
+            TAG1
           </a>
           <button class="tag-delete-button">
             <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -604,15 +602,15 @@
         <input type="text" id="inp-sm-01" class="text-input text-input-sm" placeholder="placeholder text" disabled>
       </div>
       <div class="gap-8 h-group">
-        <div class="text-input-group text-input-group-lg">
-          <span class="text-input-group-icon">
+        <div class="search-group search-group-lg">
+          <span class="search-group-icon">
             <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
               <path fill-rule="evenodd" d="M13.336 5.028a8.308 8.308 0 100 16.616 8.308 8.308 0 000-16.616zm-7.309 1a10.337 10.337 0 0115.3 13.865l7.376 7.376a1.014 1.014 0 11-1.434 1.434l-7.376-7.376A10.335 10.335 0 013 13.337c0-2.742 1.089-5.371 3.027-7.31z" clip-rule="evenodd"/>
             </svg>
           </span>
           <label for="inp-group-lg-01" class="hidden-text">Label</label>
           <input type="text" id="input-group-lg-01" class="text-input" placeholder="placeholder text">
-          <button class="text-input-group-clear-button">
+          <button class="search-group-clear-button">
             <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
               <path d="M7.515 24.485a1 1 0 010-1.414L23.07 7.515a1 1 0 111.414 1.414L8.93 24.485a1 1 0 01-1.414 0z"/>
               <path d="M24.485 24.485a1 1 0 01-1.414 0L7.515 8.93a1 1 0 111.414-1.414L24.485 23.07a1 1 0 010 1.414z"/>
@@ -620,15 +618,15 @@
             <span class="hidden-text">지우기</span>
           </button>
         </div>
-        <div class="text-input-group is-text-input-group-disabled">
-          <span class="text-input-group-icon">
+        <div class="search-group is-search-group-disabled">
+          <span class="search-group-icon">
             <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
               <path fill-rule="evenodd" d="M13.336 5.028a8.308 8.308 0 100 16.616 8.308 8.308 0 000-16.616zm-7.309 1a10.337 10.337 0 0115.3 13.865l7.376 7.376a1.014 1.014 0 11-1.434 1.434l-7.376-7.376A10.335 10.335 0 013 13.337c0-2.742 1.089-5.371 3.027-7.31z" clip-rule="evenodd"/>
             </svg>
           </span>
           <label for="inp-group-01" class="hidden-text">Label</label>
           <input type="text" id="input-group-01" class="text-input" placeholder="placeholder text" disabled>
-          <button class="text-input-group-clear-button">
+          <button class="search-group-clear-button">
             <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
               <path d="M7.515 24.485a1 1 0 010-1.414L23.07 7.515a1 1 0 111.414 1.414L8.93 24.485a1 1 0 01-1.414 0z"/>
               <path d="M24.485 24.485a1 1 0 01-1.414 0L7.515 8.93a1 1 0 111.414-1.414L24.485 23.07a1 1 0 010 1.414z"/>
@@ -638,48 +636,48 @@
         </div>
       </div>
       <div class="gap-8 h-group">
-        <div class="text-input-group text-input-group-lg">
+        <div class="search-group search-group-lg">
           <label for="inp-search-lg-01" class="hidden-text">Label</label>
           <input type="text" id="inp-search-lg-01" class="text-input" placeholder="placeholder text">
-          <button class="text-input-group-clear-button" title="초기화">
+          <button class="search-group-clear-button" title="초기화">
             <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
               <path d="M7.515 24.485a1 1 0 010-1.414L23.07 7.515a1 1 0 111.414 1.414L8.93 24.485a1 1 0 01-1.414 0z"/>
               <path d="M24.485 24.485a1 1 0 01-1.414 0L7.515 8.93a1 1 0 111.414-1.414L24.485 23.07a1 1 0 010 1.414z"/>
             </svg>
           </button>
-          <button title="검색" class="text-input-group-search-button">
+          <button title="검색" class="search-group-search-button">
             <svg class="svg-icon button-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
               <path fill-rule="evenodd" d="M13.336 5.028a8.308 8.308 0 100 16.616 8.308 8.308 0 000-16.616zm-7.309 1a10.337 10.337 0 0115.3 13.865l7.376 7.376a1.014 1.014 0 11-1.434 1.434l-7.376-7.376A10.335 10.335 0 013 13.337c0-2.742 1.089-5.371 3.027-7.31z" clip-rule="evenodd"/>
             </svg>
             <span class="hidden-text">검색</span>
           </button>
         </div>
-        <div class="text-input-group">
+        <div class="search-group">
           <label for="inp-search-01" class="hidden-text">Label</label>
           <input type="text" id="inp-search-01" class="text-input" placeholder="placeholder text">
-          <button class="text-input-group-clear-button" title="초기화">
+          <button class="search-group-clear-button" title="초기화">
             <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
               <path d="M7.515 24.485a1 1 0 010-1.414L23.07 7.515a1 1 0 111.414 1.414L8.93 24.485a1 1 0 01-1.414 0z"/>
               <path d="M24.485 24.485a1 1 0 01-1.414 0L7.515 8.93a1 1 0 111.414-1.414L24.485 23.07a1 1 0 010 1.414z"/>
             </svg>
           </button>
-          <button title="검색" class="text-input-group-search-button">
+          <button title="검색" class="search-group-search-button">
             <svg class="svg-icon button-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
               <path fill-rule="evenodd" d="M13.336 5.028a8.308 8.308 0 100 16.616 8.308 8.308 0 000-16.616zm-7.309 1a10.337 10.337 0 0115.3 13.865l7.376 7.376a1.014 1.014 0 11-1.434 1.434l-7.376-7.376A10.335 10.335 0 013 13.337c0-2.742 1.089-5.371 3.027-7.31z" clip-rule="evenodd"/>
             </svg>
             <span class="hidden-text">검색</span>
           </button>
         </div>
-        <div class="text-input-group text-input-group-sm">
+        <div class="search-group search-group-sm">
           <label for="inp-search-sm-01" class="hidden-text">Label</label>
           <input type="text" id="inp-search-sm-01" class="text-input" placeholder="placeholder text">
-          <button class="text-input-group-clear-button" title="초기화">
+          <button class="search-group-clear-button" title="초기화">
             <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
               <path d="M7.515 24.485a1 1 0 010-1.414L23.07 7.515a1 1 0 111.414 1.414L8.93 24.485a1 1 0 01-1.414 0z"/>
               <path d="M24.485 24.485a1 1 0 01-1.414 0L7.515 8.93a1 1 0 111.414-1.414L24.485 23.07a1 1 0 010 1.414z"/>
             </svg>
           </button>
-          <button title="검색" class="text-input-group-search-button">
+          <button title="검색" class="search-group-search-button">
             <svg class="svg-icon button-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
               <path fill-rule="evenodd" d="M13.336 5.028a8.308 8.308 0 100 16.616 8.308 8.308 0 000-16.616zm-7.309 1a10.337 10.337 0 0115.3 13.865l7.376 7.376a1.014 1.014 0 11-1.434 1.434l-7.376-7.376A10.335 10.335 0 013 13.337c0-2.742 1.089-5.371 3.027-7.31z" clip-rule="evenodd"/>
             </svg>
@@ -833,15 +831,15 @@
           </button>
           <div class="dropdown">
             <div class="dropdown-search">
-              <div class="text-input-group">
-                <span class="text-input-group-icon">
+              <div class="search-group">
+                <span class="search-group-icon">
                   <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                     <path fill-rule="evenodd" d="M13.336 5.028a8.308 8.308 0 100 16.616 8.308 8.308 0 000-16.616zm-7.309 1a10.337 10.337 0 0115.3 13.865l7.376 7.376a1.014 1.014 0 11-1.434 1.434l-7.376-7.376A10.335 10.335 0 013 13.337c0-2.742 1.089-5.371 3.027-7.31z" clip-rule="evenodd"></path>
                   </svg>
                 </span>
                 <label for="inp-group-01" class="hidden-text">Label</label>
                 <input type="text" id="input-group-01" class="text-input" placeholder="검색어 입력">
-                <button class="text-input-group-clear-button">
+                <button class="search-group-clear-button">
                   <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                     <path d="M7.515 24.485a1 1 0 010-1.414L23.07 7.515a1 1 0 111.414 1.414L8.93 24.485a1 1 0 01-1.414 0z"></path>
                     <path d="M24.485 24.485a1 1 0 01-1.414 0L7.515 8.93a1 1 0 111.414-1.414L24.485 23.07a1 1 0 010 1.414z"></path>
@@ -1170,10 +1168,10 @@
       </div>
     </div>
     <div class="gap-8 v-group">
-      <div class="data-card">
-        <div class="data-card-function">
-          <div class="data-card-model">
-            <img class="data-card-model-img" src="../assets/images/common/resource.jpg"></img>
+      <div class="card">
+        <div class="card-function">
+          <div class="card-model">
+            <img class="card-model-img" src="../assets/images/common/resource.jpg"></img>
             <div class="breadcrumb">
               <ul class="breadcrumb-list">
                 <li class="breadcrumb-item">
@@ -1191,18 +1189,18 @@
 
           <button class="button button-underline button-sm">미리보기</button>
         </div>
-        <div class="data-card-contents">
-          <a href="#" class="data-card-name" title="상세 보기">세종특별자치시 상하수도요금표</a>
-          <span class="data-card-depict">한국교통안전공단에서 교통카드를 이용한 대중교통 사용시  1회 이용요금 평균을 조사한 결과 입니다.</span>
+        <div class="card-contents">
+          <a href="#" class="card-name" title="상세 보기">세종특별자치시 상하수도요금표</a>
+          <span class="card-depict">한국교통안전공단에서 교통카드를 이용한 대중교통 사용시  1회 이용요금 평균을 조사한 결과 입니다.</span>
         </div>
-        <div class="data-card-info">
-          <dl class="data-card-info-list">
-            <dt class="data-card-info-title">소유자</dt>
-            <dd class="data-card-info-text">Owner</dd>
+        <div class="card-info">
+          <dl class="card-info-list">
+            <dt class="card-info-title">소유자</dt>
+            <dd class="card-info-text">Owner</dd>
           </dl>
-          <dl class="data-card-info-list">
-            <dt class="data-card-info-title">도메인</dt>
-            <dd class="data-card-info-text">Domain</dd>
+          <dl class="card-info-list">
+            <dt class="card-info-title">도메인</dt>
+            <dd class="card-info-text">Domain</dd>
           </dl>
         </div>
       </div>

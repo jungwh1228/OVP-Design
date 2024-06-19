@@ -74,12 +74,9 @@
     cursor: not-allowed;
   }
 
-  &-label {
-    font-weight: 500;
-  }
-
   &-link {
     color: $text-03;
+    font-weight: 500;
   }
 
   &.is-tag-selected {
