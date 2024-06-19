@@ -51,14 +51,14 @@
   }
 
   &:not(:only-child):first-child {
-    border-radius: 2px 0 0 2px;
+    border-radius: $border-radius-2 0 0 $border-radius-2;
   }
   &:not(:first-child),
   &:not(:last-child) {
     border-radius: 0;
   }
   &:not(:only-child):last-child {
-    border-radius: 0 2px 2px 0;
+    border-radius: 0 $border-radius-2 $border-radius-2 0;
   }
 
   .is-toggle-button-item-selected {

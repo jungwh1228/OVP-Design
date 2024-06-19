@@ -1,9 +1,7 @@
 .menu {
-  @include list(menu);
   display: flex;
   flex-direction: column;
   border: 1px solid $ui-04;
-  background-color: $ui-02;
   color: $text-01;
 
 
@@ -83,8 +81,19 @@
       height: 40px;
     }
 
-    &.is-menu-item-selected .menu-details {
-      display: flex;
+    &.is-menu-item-selected {
+      .menu-details {
+        display: flex;
+      }
+
+      .menu-action-button  {
+        .svg-icon {
+          fill: $primary;
+        }
+        .button-text {
+          color: $primary;
+        }
+      }
     }
   }
 
@@ -112,6 +121,44 @@
       display: flex;
       flex-grow: 1;
       align-items: center;
+    }
+  }
+
+  &-action-buttons {
+    display: flex;
+    margin-right: $spacing-8;
+    z-index: 1;
+  }
+
+  &-action-button {
+    @include button;
+    flex-shrink: 0;
+    padding: 0;
+    border-radius: $border-radius-2;
+    background-color: transparent;
+
+    .svg-icon {
+      @include icon-size(18px);
+    }
+
+    &:hover:not(:disabled) {
+      background-color: $hover-row;
+    }
+
+    &:active:not(:disabled) {
+      background-color: $hover-row;
+
+      .svg-icon {
+        fill: $primary;
+      }
+
+      .button-text {
+        color: $primary;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: $spacing-2;
     }
   }
 
@@ -147,130 +194,18 @@
         border-bottom: 1px solid rgba($ui-04, 0.75);
       }
     }
+
+
   }
 
   &-lg {
-    .menu-button {
-        height: 40px;
-    }
-    .menu-text {
-      @include font-size('14');
-    }
-
     .menu-action-button {
       width: 24px;
       height: 24px;
-      
+
       .svg-icon {
         @include icon-size('sm');
       }
     }
-  } 
+  }
 }
-
-
-
-
-
-// .dynamic-list {
-//   width: 100%;
-//   padding: $spacing-sm;
-
-//   .notification-full {
-//     height: 100%;
-//     justify-content: center;
-//   }
-// }
-
-// .dynamic-list__no-contents {
-//   display: flex;
-//   height: 100%;
-//   background-color: $odd-row;
-//   justify-content: center;
-// }
-
-// .dynamic-list__no-contents .notification-message {
-//   height: rem(480px);
-// }
-
-// .dynamic-list__toolbar {
-//   display: flex;
-//   margin-bottom: $spacing-sm;
-// }
-
-// .dynamic-list__items {
-//   min-height: rem(480px);
-//   max-height: rem(480px);
-//   padding-right: $spacing-xs;
-//   overflow-y: auto;
-//   position: relative;
-// }
-
-// .dynamic-list__item {
-//   border: 1px solid $ui-04;
-//   background-color: $odd-row;
-// }
-
-// .dynamic-list__item:not(:last-child) {
-//   margin-bottom: $spacing-md;
-// }
-
-// .dynamic-list__item .dynamic-list__head {
-//   display: flex;
-//   align-items: flex-start;
-//   padding: $spacing-xs;
-//   background-color: $ui-02;
-//   border-bottom: 1px solid $ui-04;
-// }
-
-// .dynamic-list__filter {
-//   flex: 1;
-// }
-
-// .dynamic-list__body {
-//   padding: $spacing-2xs 0;
-// }
-
-// .dynamic-list__body-row {
-//   padding: $spacing-3xs 0;
-// }
-
-// .dynamic-list__lang {
-//   padding: 0 $spacing-xs 0 $spacing-sm;
-//   font-weight: 500;
-//   color: $text-02;
-// }
-
-// .dynamic-list__contents {
-//   display: flex;
-//   flex: 1;
-//   align-items: center;
-//   position: relative;
-//   overflow: hidden;
-// }
-
-// .dynamic-list__form {
-//   flex: 1;
-//   position: relative;
-// }
-
-// .dynamic-list__buttons {
-//   .button--link {
-//     padding: 0 $spacing-xs 0 $spacing-2xs;
-//   }
-
-//   .button--icon {
-//     padding: 0;
-//   }
-// }
-
-// .dynamic-list__button {
-//   margin-top: $spacing-2xs;
-// }
-
-// .dynamic-list__text {
-//   overflow: hidden;
-//   text-overflow: ellipsis;
-//   white-space: nowrap;
-//   line-height: 2rem;
-// }

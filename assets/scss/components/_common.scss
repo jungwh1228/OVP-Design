@@ -1,0 +1,216 @@
+// -------------------------
+// button
+// -------------------------
+@mixin button {
+  @include flex;
+  @include animation-default;
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: $border-radius-2;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:focus {
+    opacity: .25;
+    cursor: not-allowed;
+  }
+}
+// -------------------------
+// list style
+// -------------------------
+$list-classes: menu, dropdown, accordion-vertical;
+
+@each $list in $list-classes {
+  .#{$list} {
+    background-color: $ui-02;
+
+    &-list + &-list::before {
+      content: "";
+      display: block;
+      border-top: 1px solid $ui-04;
+      margin: $spacing-4 0;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &:hover {
+        background-color: $ui-01;
+
+        &.is-#{$list}-item-disabled {
+          background-color: $ui-02;
+        }
+      }
+    }
+
+    &-button {
+      @include ellipsis;
+      text-overflow: ellipsis;
+      white-space:nowrap;
+      overflow: hidden;
+      @include button;
+      flex: 1;
+      width: 100%;
+      height: 32px;
+      flex-direction: row;
+      gap: $spacing-4;
+      justify-content: flex-start;
+      padding: $spacing-4 $spacing-8;
+      font-weight: 400;
+      background-color: transparent;
+      border: none;
+      color: inherit;
+      text-align: left;
+    }
+
+    &-notification {
+      display: flex;
+      flex: 1;
+      height: 32px;
+      padding: $spacing-4 $spacing-8;
+      cursor: default;
+    }
+
+    &-icon,
+    &-subicon {
+      @include icon-size(18px);
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    &-button:active &-text {
+      color: $primary;
+    }
+
+    &-button:active &-icon,
+    &-button:active &-subicon {
+      fill: $primary;
+    }
+
+    &-text {
+      @include ellipsis;
+
+      @include font-size('14');
+      vertical-align: middle;
+      color: $text-01;
+    }
+
+    .is-#{$list}-item-disabled {
+      opacity: 0.4;
+
+      .#{$list}-button {
+          cursor: not-allowed;
+
+        &:active {
+          background-color: $hover-ui-accent;
+        }
+      }
+
+      .#{$list}-text {
+          color: $text-05;
+      }
+
+      .#{$list}-icon {
+          fill: $text-03;
+      }
+      &.is-#{$list}-item-selected {
+        &:hover {
+          background-color: $hover-ui-accent;
+          opacity: 0.4;
+        }
+      }
+    }
+
+    &-item .checkbox {
+      @include ellipsis;
+      padding: $spacing-4 $spacing-8;
+      height: 32px;
+      flex-grow: 1;
+
+      .checkbox-label {
+        @include font-size('13');
+        width: 100%;
+      }
+
+      .checkbox-input:checked {
+        + .checkbox-label {
+          color: $primary;
+        }
+
+        + .checkbox-label .svg-icon {
+          fill: $primary;
+        }
+
+        + .checkbox-label span {
+          color: $primary;
+        }
+      }
+    }
+
+    &-item .radio {
+      @include ellipsis;
+      padding: $spacing-4 $spacing-8;
+      height: 32px;
+      flex: 1;
+
+      .radio-label {
+        width: 100%;
+      }
+
+      .radio-input:checked {
+        + .radio-label {
+          color: $primary;
+        }
+      }
+    }
+
+    .is-#{$list}-item-selected {
+      color: $primary;
+      background-color: $hover-ui-accent;
+
+      .#{$list}-text {
+        color: $primary;
+      }
+
+      .#{$list}-button:active {
+        .#{$list}-icon,
+        .#{$list}-subicon {
+          fill: $primary;
+        }
+      }
+    }
+
+    &-lg {
+      .#{$list}-button {
+        height: 40px;
+      }
+      .#{$list}-icon {
+        @include icon-size('sm');
+      }
+      .#{$list}-text {
+        @include font-size('14');
+      }
+    }
+
+    &-sm {
+      .#{$list}-button {
+        height: 24px;
+      }
+      .#{$list}-icon {
+        @include icon-size('xs');
+      }
+      .#{$list}-text {
+        @include font-size('12');
+      }
+
+    }
+  }
+}

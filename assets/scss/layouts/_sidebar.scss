@@ -6,8 +6,17 @@
   height: 100%;
   background-color: $primary;
 
+  &-layout {
+    @include flex($direction:column, $horizontal:space-between);
+    padding-top: $spacing-24;
+  }
+
   &-item {
     @include flex($horizontal:flex-start);
+
+    .svg-icon {
+
+    }
   }
   &-text {
     @include font-size('14');
@@ -23,5 +32,4 @@
       display: block;
     }
   }
-
 }
