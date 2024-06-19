@@ -21,6 +21,101 @@
     cursor: not-allowed;
   }
 }
+
+// -------------------------
+// input style
+// -------------------------
+$input-classes: checkbox, radio;
+
+@each $input in $input-classes {
+  .#{$input} {
+    position: relative;
+
+    &-input {
+      @include hidden-text;
+    }
+
+    &-label {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      padding-left: $spacing-24;
+      min-height: 24px;
+      color: $text-02;
+      white-space: nowrap;
+      user-select: none;
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        box-sizing: border-box;
+        @include animation-default;
+      }
+
+
+      &::before {
+        left: 0;
+        margin: $spacing-2;
+        border: 1px solid $text-03;
+
+      }
+
+      &:hover::before {
+        border-color: $primary;
+      }
+    }
+      // disabled 상태
+    &.is-#{$input}-disabled &-label,
+    &-input:disabled + &-label {
+      opacity: 0.4;
+      cursor: not-allowed;
+
+        &:hover {
+          &::before,
+          &::after {
+          border-color: $text-03;
+        }
+      }
+    }
+
+    &.#{$input}-lg {
+      .#{$input}-label {
+        @include font-size("15");
+        padding-left: $spacing-24 + $spacing-4;
+        min-height: 28px;
+
+        &::before {
+          width: 20px;
+          height: 20px;
+          margin: $spacing-2;
+          top: 2px;
+          border-width: 2px;
+        }
+      }
+    }
+
+    &.#{$input}-sm {
+      .#{$input}-label {
+        @include font-size("12");
+        padding-left: $spacing-16;
+        min-height: 18px;
+
+        &::before {
+          width: 12px;
+          height: 12px;
+          margin: 1px;
+          top: 3px;
+          border-width: 1px;
+        }
+      }
+    }
+  }
+}
+
+
+
 // -------------------------
 // list style
 // -------------------------

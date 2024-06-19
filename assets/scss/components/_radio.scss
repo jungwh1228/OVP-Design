@@ -1,0 +1,163 @@
+.radio {
+  display: block;
+
+  &-label::before {
+    width: 17px;
+    height: 17px;
+    top: 1px;
+    background-color: transparent;
+    border-radius: $border-radius-round;
+  }
+
+  &-label::after {
+    left: 7px;
+    top: 8px;
+    width: 7px;
+    height: 7px;
+    border-radius: $border-radius-round;
+    background-color: $text-04;
+  }
+
+  &-icon {
+    @include icon-size('sm');
+  }
+
+  // checked 상태
+  &-input:checked {
+    & + .radio-label {
+      .radio-icon {
+        fill: $ui-02;
+      }
+    }
+
+    & + .radio-label::before {
+      background-color: $primary;
+      border-color: $primary;
+    }
+
+    & + .radio-label:hover::after {
+      background-color: $text-04;
+    }
+  }
+
+  // checked + disabled 상태
+  &:disabled + .radio-label:hover::before {
+   border-color: $primary;
+  }
+
+  &.radio-lg {
+    .radio-label::after {
+      left: 8px;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+    }
+
+    .radio__icon {
+      @include icon-size('md');
+    }
+  }
+
+  &.radio-sm {
+    .radio-label::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      margin: 1px;
+      top: 3px;
+      border-width: 1px;
+    }
+
+    .radio-label::after {
+      left: 5px;
+      top: 8px;
+      width: 4px;
+      height: 4px;
+    }
+
+    .radio-icon {
+      @include icon-size('xs');
+    }
+  }
+}
+// -------------------------
+// radio-switch
+// -------------------------
+.radio-switch {
+  display: flex;
+  align-items: center;
+
+  .radio {
+    margin: 0 0 0 -1px;
+
+    &:first-child {
+      .radio-label {
+        border-top-left-radius: $border-radius-2;
+        border-bottom-left-radius: $border-radius-2;
+      }
+    }
+    &:last-child {
+      .radio-label {
+        border-top-right-radius: $border-radius-2;
+        border-bottom-right-radius: $border-radius-2;
+      }
+    }
+  }
+
+  .radio-label {
+    height:32px;
+    padding: 0 $spacing-12;
+    line-height: 1;
+    border: 1px solid $ui-04;
+
+    &:after,
+    &:before {
+      content: none;
+    }
+  }
+
+  .radio-input:checked {
+    + .radio-label {
+      @include z-index('float');
+      background-color: $primary;
+      border-color: $primary;
+      color: $text-04;
+    }
+  }
+
+  .radio-lg {
+    .radio-label {
+      padding: 0 $spacing-16;
+      height: 40px;
+    }
+  }
+
+  .radio-sm {
+    .radio-label {
+      padding: 0 $spacing-8;
+      height: 24px;
+    }
+  }
+}
+
+.radio-switch-icon {
+  .radio {
+    .radio-label {
+      width: 32px;
+      padding: 0 5px;
+      justify-content: center;
+    }
+  }
+  .radio-lg {
+    .radio-label {
+      width: 40px;
+      padding: 0 7px;
+    }
+  }
+  .radio-sm {
+    .radio-label {
+      width: 24px;
+      padding: 0 3px;
+    }
+  }
+}

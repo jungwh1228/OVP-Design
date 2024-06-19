@@ -1,50 +1,22 @@
 .checkbox {
-  position: relative;
+  // position: relative;
 
   &-input {
-    @include hidden-text;
+    // @include hidden-text;
     top: 4px;
     left: 2px;
-
-    &:focus-visible:not(:disabled) {
-      + .checkbox-label:before {
-        border-color: $primary;
-      }
     }
-  }
+
 
   &-label {
-    display: inline-flex;
-    align-items: center;
-    position: relative;
-    padding-left: $spacing-24;
-    min-height: 24px;
-    color: $text-02;
-    white-space: nowrap;
-    user-select: none;
-    cursor: pointer;
-
-    &::before,
-    &::after {
-      box-sizing: border-box;
-      @include animation-default;
-    }
-
     &::before {
-      content: "";
       width: 16px;
       height: 16px;
-      margin: $spacing-2;
-      position: absolute;
-      left: 0;
       top: 2px;
       background-color: $ui-01;
-      border: 1px solid $text-03;
     }
 
     &::after {
-      content: "";
-      position: absolute;
       left: 6px;
       top: 4px;
       width: 9px;
@@ -54,10 +26,6 @@
       border-bottom: 2px solid $text-04;
       transform: scale(0) rotate(-45deg);
       transform-origin: bottom right;
-    }
-
-    &:hover::before {
-      border-color: $primary;
     }
   }
 
@@ -91,20 +59,7 @@
     background-color: transparent;
   }
 
-  // disabled 상태
-&.is-checkbox-disabled &-label,
-&-input:disabled + &-label {
-  opacity: 0.4;
-  cursor: not-allowed;
 
-  // TODO: 기본 상태 디자인에 :not 으로 줄일 수 있음
-    &:hover {
-      &::before,
-      &::after {
-        border-color: $text-03;
-      }
-    }
-  }
 
   &.is-checkbox-disabled &-input:checked + &-label,
   &-input:disabled:checked + &-label {
@@ -119,22 +74,7 @@
   }
 
   &.checkbox-lg {
-    .checkbox-label {
-      @include font-size("15");
-      padding-left: $spacing-24 + $spacing-4;
-      min-height: 28px;
-    }
-
     .checkbox-label{
-      &::before {
-        content: "";
-        width: 20px;
-        height: 20px;
-        margin: $spacing-2;
-        top: 2px;
-        border-width: 2px;
-      }
-
       &::after {
         left: 8px;
         top: 4px;
@@ -156,21 +96,6 @@
 
   &.checkbox-sm {
     .checkbox-label {
-      @include font-size("12");
-      padding-left: $spacing-16;
-      min-height: 18px;
-    }
-
-    .checkbox-label {
-      &::before {
-        content: "";
-        width: 12px;
-        height: 12px;
-        margin: 1px;
-        top: 3px;
-        border-width: 1px;
-      }
-
       &::after {
         left: 4px;
         top: 4px;
